@@ -1,0 +1,8 @@
+# Block direct web access to config & library includes.
+<FilesMatch "^(config|trackbox)\.php$">
+    Require all denied
+</FilesMatch>
+# Protect the log file.
+<FilesMatch "\.log$">
+    Require all denied
+</FilesMatch>

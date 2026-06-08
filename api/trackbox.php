@@ -41,21 +41,12 @@ function tb_random_password(int $len = 12): string
     return str_shuffle($pw);
 }
 
-/** Send a line to the system error_log (visible in Render dashboard). */
+/** Append a line to the log file if configured. */
 function tb_log(?string $file, string $label, $data): void
 {
-    // Формируем сообщение
-    $message = (is_string($data) ? $data : json_encode($data));
-    $line = "TRACKBOX: [$label] $message";
-    
-    // Выводим в системный лог Apache (появится во вкладке Logs на Render)
-    error_log($line);
-
-    // Оставляем запись в файл на всякий случай (если запускаешь на локальном ПК)
-    if ($file) {
-        $fileLine = '[' . date('c') . "] $label $message\n";
-        @file_put_contents($file, $fileLine, FILE_APPEND);
-    }
+    if (!$file) return;
+    $line = '[' . date('c') . "] $label " . (is_string($data) ? $data : json_encode($data)) . "\n";
+    @file_put_contents($file, $line, FILE_APPEND);
 }
 
 /**
@@ -90,21 +81,28 @@ function tb_request(string $url, array $headers, array $body): array
 function tb_extract_redirect(?array $resp): ?string
 {
     if (!$resp) return null;
-    $candidates = [];
-    // top level
-    foreach (['url', 'redirect', 'redirectUrl', 'auto_login', 'autoLoginUrl', 'AutoLoginUrl'] as $k) {
-        if (!empty($resp[$k]) && is_string($resp[$k])) $candidates[] = $resp[$k];
-    }
-    // nested "data"
-    if (!empty($resp['data']) && is_array($resp['data'])) {
-        foreach (['url', 'redirect', 'redirectUrl', 'auto_login', 'autoLoginUrl', 'AutoLoginUrl'] as $k) {
-            if (!empty($resp['data'][$k]) && is_string($resp['data'][$k])) $candidates[] = $resp['data'][$k];
+    $isUrl = fn($v) => is_string($v) && preg_match('~^https?://~i', $v);
+
+    // Most common in this Trackbox: top-level "data" IS the login URL string.
+    if (isset($resp['data']) && $isUrl($resp['data'])) return $resp['data'];
+
+    // Otherwise search recursively for a URL under any known key.
+    $keys = ['loginURL', 'loginUrl', 'url', 'redirect', 'redirectUrl',
+             'auto_login', 'autoLoginUrl', 'AutoLoginUrl', 'brokerUrl'];
+    $fallback = null;
+    $stack = [$resp];
+    while ($stack) {
+        $node = array_pop($stack);
+        if (!is_array($node)) continue;
+        foreach ($keys as $k) {
+            if (isset($node[$k]) && $isUrl($node[$k])) return $node[$k];
+        }
+        foreach ($node as $v) {
+            if (is_array($v)) $stack[] = $v;
+            elseif ($fallback === null && $isUrl($v)) $fallback = $v;
         }
     }
-    foreach ($candidates as $c) {
-        if (preg_match('~^https?://~i', $c)) return $c;
-    }
-    return null;
+    return $fallback;
 }
 
 /** Was the call successful? Handles several Trackbox response shapes. */

@@ -15,8 +15,8 @@
 
 return [
     // ---- Auth headers (REQUIRED — fill these in) -----------------------
-    'username'     => 'username',
-    'password'     => 'password',
+    'username'     => '627',
+    'password'     => 'H5-<i5T$wd',
     'api_key_push' => '2643889w34df345676ssdas323tgc738',
     'api_key_pull' => '2643889w34df345676ssdas323tgc738',
 

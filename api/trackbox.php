@@ -41,12 +41,21 @@ function tb_random_password(int $len = 12): string
     return str_shuffle($pw);
 }
 
-/** Append a line to the log file if configured. */
+/** Send a line to the system error_log (visible in Render dashboard). */
 function tb_log(?string $file, string $label, $data): void
 {
-    if (!$file) return;
-    $line = '[' . date('c') . "] $label " . (is_string($data) ? $data : json_encode($data)) . "\n";
-    @file_put_contents($file, $line, FILE_APPEND);
+    // Формируем сообщение
+    $message = (is_string($data) ? $data : json_encode($data));
+    $line = "TRACKBOX: [$label] $message";
+    
+    // Выводим в системный лог Apache (появится во вкладке Logs на Render)
+    error_log($line);
+
+    // Оставляем запись в файл на всякий случай (если запускаешь на локальном ПК)
+    if ($file) {
+        $fileLine = '[' . date('c') . "] $label $message\n";
+        @file_put_contents($file, $fileLine, FILE_APPEND);
+    }
 }
 
 /**

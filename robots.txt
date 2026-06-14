@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://solaria-ar.com/sitemap.xml
+Sitemap: https://talmorux-canada.com/sitemap.xml

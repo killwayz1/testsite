@@ -24,7 +24,7 @@ return [
 
     // ---- Behaviour ----
     'generate_password' => true, // sign-up forms have no password field
-    'debug' => true,
+    'debug' => false,
     'verify_ssl' => true,
     'log_file' => null,          // local logging disabled per request
 ];

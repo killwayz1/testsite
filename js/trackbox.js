@@ -88,33 +88,76 @@
     return { first: first, last: last, full: full };
   }
 
+  // ISO-2 country -> calling code (covers the geos these landings target).
+  var ISO2DIAL = {
+    CA:'1', US:'1', AR:'54', MX:'52', BR:'55', CL:'56', UY:'598', PY:'595',
+    BO:'591', PE:'51', CO:'57', EC:'593', VE:'58', ES:'34', GB:'44', UK:'44',
+    DE:'49', FR:'33', IT:'39', PT:'351'
+  };
+
+  // Returns { num: <digits, with country code when determinable>, known: bool }.
   function readPhone(form, phoneEl) {
-    if (!phoneEl) return '';
+    if (!phoneEl) return { num: '', known: false };
     var raw = digits(phoneEl.value);
+
+    // combine a dial code with the national part (drop trunk "0", avoid doubling)
+    function combine(dialRaw) {
+      var dial = digits(dialRaw);
+      if (!dial) return null;
+      var nat = raw.replace(/^0+/, '');
+      if (nat.indexOf(dial) === 0 && nat.length > dial.length) return nat;
+      return dial + nat;
+    }
+
+    // 0) a hidden field already holding the full international number.
+    var hf = form.querySelector('input[type="hidden"][name*="phonenum" i], input[type="hidden"][name*="phone_full" i], input[type="hidden"][name*="full_phone" i], input[type="hidden"][name*="e164" i], input[type="hidden"][name*="international" i]');
+    if (hf) { var hv = (hf.value || '').trim(); if (/^\+?\d{8,15}$/.test(hv)) return { num: digits(hv), known: true }; }
+
+    // 1) intl-tel-input instance (several versions/access paths).
     try {
-      var iti = (window.intlTelInputGlobals && window.intlTelInputGlobals.getInstance &&
-        window.intlTelInputGlobals.getInstance(phoneEl)) || (phoneEl.iti) || null;
+      var g = window.intlTelInputGlobals;
+      var iti = (g && g.getInstance && g.getInstance(phoneEl)) ||
+        (window.intlTelInput && window.intlTelInput.getInstance && window.intlTelInput.getInstance(phoneEl)) ||
+        phoneEl.iti || null;
       if (iti && typeof iti.getNumber === 'function') {
         var n = digits(iti.getNumber());
-        if (n) return n;
+        if (n && n.length >= 8) return { num: n, known: true };
       }
     } catch (e) {}
-    var dialEl = (phoneEl.closest && phoneEl.closest('.iti')) ?
-      phoneEl.closest('.iti').querySelector('.iti__selected-dial-code') : null;
-    var dial = digits(txt(dialEl));
-    if (!dial) {
-      var sels = form.querySelectorAll('select');
-      for (var i = 0; i < sels.length; i++) {
-        var v = (sels[i].value || '').trim();
-        if (/^\+\d{1,4}$/.test(v)) { dial = digits(v); break; }
+
+    // 2) intl-tel-input separate dial-code element.
+    var diaEl = (phoneEl.closest && phoneEl.closest('.iti')) ? phoneEl.closest('.iti').querySelector('.iti__selected-dial-code') : null;
+    if (diaEl) { var c = combine(txt(diaEl)); if (c) return { num: c, known: true }; }
+
+    // 3) inside an actual phone-widget container only (avoid catching stray
+    //    "+NN" text elsewhere on the page), read a visible dial like "+1"/"+54"
+    //    or a [data-dial] attribute.
+    var box = phoneEl.closest && phoneEl.closest('.iti, .iti-wrap, .phone-select, .phone-flag, [class*="phone"], [class*="iti"]');
+    if (box) {
+      var els = box.querySelectorAll('[data-dial], span, div, button, li, small, b, strong');
+      for (var i = 0; i < els.length; i++) {
+        var dd = els[i].getAttribute && els[i].getAttribute('data-dial');
+        var t = (dd || els[i].textContent || '').trim();
+        if (/^\+\d{1,4}$/.test(t)) { var c2 = combine(t); if (c2) return { num: c2, known: true }; }
       }
     }
-    if (!dial) {
-      var hid = form.querySelector('[name*="phoneCountry" i], [name*="dial" i], [name*="countrycode" i]');
-      if (hid && /^\+?\d{1,4}$/.test((hid.value || '').trim())) dial = digits(hid.value);
+
+    // 4) a <select> whose value is a dial code.
+    var sels = form.querySelectorAll('select');
+    for (var j = 0; j < sels.length; j++) {
+      var v = (sels[j].value || '').trim();
+      if (/^\+\d{1,4}$/.test(v)) { var c3 = combine(v); if (c3) return { num: c3, known: true }; }
     }
-    if (dial && raw.indexOf(dial) !== 0) return dial + raw;
-    return raw;
+
+    // 5) a hidden ISO country code -> calling code.
+    var isoEl = form.querySelector('input[type="hidden"][name*="phonecountry" i], input[type="hidden"][name*="country" i], input[type="hidden"][name*="isocode" i]');
+    if (isoEl) {
+      var iso = (isoEl.value || '').trim().toUpperCase();
+      if (ISO2DIAL[iso]) { var c4 = combine(ISO2DIAL[iso]); if (c4) return { num: c4, known: true }; }
+    }
+
+    // nothing determined -> national digits, country code unknown.
+    return { num: raw, known: false };
   }
 
   function tracking() {
@@ -230,10 +273,12 @@
       var parts = firstVal.split(/\s+/); firstVal = parts.shift(); lastVal = lastVal || parts.join(' ');
     }
     var emailVal = info.email ? info.email.value.trim() : '';
-    var phoneVal = readPhone(form, info.phone);
+    var ph = readPhone(form, info.phone);
+    var phoneVal = ph.num;
     if (!firstVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal) || phoneVal.length < 6) { showMessage(form, L.bad, true); return; }
     var payload = {
       first_name: firstVal, last_name: lastVal, email: emailVal, phone: phoneVal,
+      phone_cc_known: ph.known ? 1 : 0,
       page_url: window.location.href, referrer: document.referrer || '',
       language: document.documentElement.getAttribute('lang') || ''
     };

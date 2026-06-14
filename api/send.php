@@ -31,11 +31,13 @@ $phone     = preg_replace('/[^\d]/', '', $in['phone'] ?? '');
 if ($firstname === '' || $email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($phone) < 6)
     tb_respond(['ok'=>false,'code'=>'try_again','message'=>'invalid input'], 422);
 
-// Ensure the phone carries its country calling code (Trackbox needs a region
-// to parse it). Front-end phone widgets don't always include it.
+// Ensure the phone carries a country calling code (Trackbox parses the region
+// from it). The client sends the code it read from the phone widget; only when
+// it could NOT determine one do we fall back to this site's default geo code.
+$ccKnown = !empty($in['phone_cc_known']);
 $dial = preg_replace('/\D/', '', (string) ($cfg['default_dial'] ?? ''));
-if ($dial !== '' && strpos($phone, $dial) !== 0) {
-    $phone = $dial . $phone;
+if (!$ccKnown && $dial !== '' && strpos($phone, $dial) !== 0) {
+    $phone = $dial . ltrim($phone, '0');
 }
 
 $password = !empty($in['password']) ? $in['password']

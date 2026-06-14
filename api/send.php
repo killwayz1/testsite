@@ -31,6 +31,13 @@ $phone     = preg_replace('/[^\d]/', '', $in['phone'] ?? '');
 if ($firstname === '' || $email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($phone) < 6)
     tb_respond(['ok'=>false,'code'=>'try_again','message'=>'invalid input'], 422);
 
+// Ensure the phone carries its country calling code (Trackbox needs a region
+// to parse it). Front-end phone widgets don't always include it.
+$dial = preg_replace('/\D/', '', (string) ($cfg['default_dial'] ?? ''));
+if ($dial !== '' && strpos($phone, $dial) !== 0) {
+    $phone = $dial . $phone;
+}
+
 $password = !empty($in['password']) ? $in['password']
           : ($cfg['generate_password'] ? tb_random_password() : 'Aa12345!');
 

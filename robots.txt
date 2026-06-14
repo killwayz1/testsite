@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://talmorux-canada.com/sitemap.xml
+Sitemap: https://opulatrix-canada.com/sitemap.xml

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://opulatrix-canada.com/sitemap.xml
+Sitemap: https://nexlares-canada.com/sitemap.xml

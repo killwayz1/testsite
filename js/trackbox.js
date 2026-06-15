@@ -142,11 +142,22 @@
       }
     }
 
-    // 4) a <select> whose value is a dial code.
+    // 4) a country / dial <select>: accept a "+NN" value, a data-dial on the
+    //    selected option, a 2-letter ISO value, or the select's data-default ISO.
     var sels = form.querySelectorAll('select');
     for (var j = 0; j < sels.length; j++) {
-      var v = (sels[j].value || '').trim();
-      if (/^\+\d{1,4}$/.test(v)) { var c3 = combine(v); if (c3) return { num: c3, known: true }; }
+      var sel = sels[j];
+      var cand = (sel.value || '').trim();
+      var phoneish = (sel.matches && sel.matches('[data-phone-country], [class*="country" i], [class*="dial" i], [class*="phone" i], [name*="dial" i], [name*="country" i], [name*="phone" i]')) || /^\+\d{1,4}$/.test(cand);
+      if (!phoneish) continue;
+      var opt = (sel.options && sel.selectedIndex >= 0) ? sel.options[sel.selectedIndex] : null;
+      var optDial = opt && opt.getAttribute ? (opt.getAttribute('data-dial') || '') : '';
+      var dialStr = '';
+      if (/^\+?\d{1,4}$/.test(cand) && /\d/.test(cand) && cand.replace('+','').length <= 4 && /^\+/.test(cand)) dialStr = cand;
+      else if (/^\+\d{1,4}$/.test(optDial)) dialStr = optDial;
+      else if (/^[A-Za-z]{2}$/.test(cand) && ISO2DIAL[cand.toUpperCase()]) dialStr = ISO2DIAL[cand.toUpperCase()];
+      else { var dd = (sel.getAttribute('data-default') || '').toUpperCase(); if (ISO2DIAL[dd]) dialStr = ISO2DIAL[dd]; }
+      if (dialStr) { var c3 = combine(dialStr); if (c3) return { num: c3, known: true }; }
     }
 
     // 5) a hidden ISO country code -> calling code.

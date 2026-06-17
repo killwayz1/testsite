@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nexlares-canada.com/sitemap.xml
+Sitemap: https://plata-invest-ca.com/sitemap.xml

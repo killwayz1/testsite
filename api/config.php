@@ -1,6 +1,6 @@
 <?php
 /**
- * config.php — Trackbox credentials & affiliate parameters for nexlares-canada.com.
+ * config.php — Trackbox credentials & affiliate parameters for plata-invest-ca.com.
  * The three header credentials are mandatory and come from your Trackbox
  * partner. ai/ci/gi are the affiliate/campaign/geo ids.
  */
@@ -16,15 +16,15 @@ return [
     'ai'       => '2958428',
     'ci'       => '1',
     'gi'       => '403',          // geo id (single geo for all sites)
-    'lg'       => 'FR',
-    'default_dial' => '1',  // country calling code for phone
+    'lg'       => 'EN',
+    'default_dial' => '1',       // lead language
 
     // ---- Source site (sent to Trackbox in "so", visible in reports) ----
-    'site_domain' => 'nexlares-canada.com',
+    'site_domain' => 'plata-invest-ca.com',
 
     // ---- Behaviour ----
     'generate_password' => true, // sign-up forms have no password field
-    'debug' => true,
+    'debug' => false,
     'verify_ssl' => true,
     'log_file' => null,          // local logging disabled per request
 ];

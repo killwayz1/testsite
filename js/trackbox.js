@@ -153,7 +153,7 @@
       var opt = (sel.options && sel.selectedIndex >= 0) ? sel.options[sel.selectedIndex] : null;
       var optDial = opt && opt.getAttribute ? (opt.getAttribute('data-dial') || '') : '';
       var dialStr = '';
-      if (/^\+?\d{1,4}$/.test(cand) && /\d/.test(cand) && cand.replace('+','').length <= 4 && /^\+/.test(cand)) dialStr = cand;
+      if (/^\+\d{1,4}$/.test(cand)) dialStr = cand;
       else if (/^\+\d{1,4}$/.test(optDial)) dialStr = optDial;
       else if (/^[A-Za-z]{2}$/.test(cand) && ISO2DIAL[cand.toUpperCase()]) dialStr = ISO2DIAL[cand.toUpperCase()];
       else { var dd = (sel.getAttribute('data-default') || '').toUpperCase(); if (ISO2DIAL[dd]) dialStr = ISO2DIAL[dd]; }
@@ -261,7 +261,9 @@
     var names = findNames(list, email, phone, pass);
     var hasName = names.first || names.full;
     if (pass && !hasName) return { kind: 'login', email: email, pass: pass };
-    if (email && (phone || names.first || names.full)) return { kind: 'lead', email: email, phone: phone, names: names };
+    // A Trackbox lead REQUIRES a phone. Forms with email+name but no phone
+    // (contact / report / newsletter) are left to the site's own handler.
+    if (email && phone) return { kind: 'lead', email: email, phone: phone, names: names };
     return { kind: 'skip' };
   }
 

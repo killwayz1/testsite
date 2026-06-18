@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" width="320" height="64" role="img" aria-label="Anlagstein">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3e5266"/>
+      <stop offset="100%" stop-color="#b27a52"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="6" width="52" height="52" rx="14" fill="url(#lg)"/>
+  <text x="26" y="42" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="900" font-size="30" fill="#ffffff">A</text>
+  <text x="64" y="42" font-family="Inter,Arial,sans-serif" font-weight="900" font-size="28" fill="#15202b">Anlagstein</text>
+</svg>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://plata-invest-ca.com/sitemap.xml
+Sitemap: https://anlagstein-swiss.com/sitemap.xml

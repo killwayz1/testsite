@@ -1,842 +1,487 @@
 <!DOCTYPE html>
-<html lang="en-CA">
+<html lang="de-CH">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#161e26">
+  <meta name="format-detection" content="telephone=no">
+  <title>Anlagstein – Krypto Trading Plattform Schweiz | Anlagstein</title>
+  <meta name="description" content="Anlagstein bündelt Marktanalyse, Krypto-Trading-Werkzeuge und persönliche Beratung in einer Schweizer Plattform – jetzt fundiert starten und Zugang anfragen.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://anlagstein-swiss.com/">
 
-<title>Plata Invest — AI Investing Workspace for Canada | Plata Invest</title>
-<meta name="description" content="Plata Invest CA gives Canadian traders an AI-led investing workspace with analytics, risk controls and multi-asset coverage. Open your Plata Invest account today.">
+  <link rel="alternate" hreflang="de-CH" href="https://anlagstein-swiss.com/">
+  <link rel="alternate" hreflang="x-default" href="https://anlagstein-swiss.com/">
 
-<meta name="robots" content="index, follow">
+  <meta property="og:title" content="Anlagstein – Krypto Trading Plattform Schweiz | Anlagstein">
+  <meta property="og:description" content="Anlagstein bündelt Marktanalyse, Krypto-Trading-Werkzeuge und persönliche Beratung in einer Schweizer Plattform – jetzt fundiert starten und Zugang anfragen.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://anlagstein-swiss.com/">
+  <meta property="og:site_name" content="Anlagstein">
+  <meta property="og:locale" content="de_CH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anlagstein – Krypto Trading Plattform Schweiz | Anlagstein">
+  <meta name="twitter:description" content="Anlagstein bündelt Marktanalyse, Krypto-Trading-Werkzeuge und persönliche Beratung in einer Schweizer Plattform – jetzt fundiert starten und Zugang anfragen.">
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Plata Invest">
-<meta property="og:title" content="Plata Invest — AI Investing Workspace for Canada | Plata Invest">
-<meta property="og:description" content="Plata Invest CA gives Canadian traders an AI-led investing workspace with analytics, risk controls and multi-asset coverage. Open your Plata Invest account today.">
-<meta property="og:url" content="https://plata-invest-ca.com/">
-<meta property="og:image" content="https://plata-invest-ca.com/images/logo.png">
-<meta property="og:image:width" content="400">
-<meta property="og:image:height" content="400">
-<meta property="og:image:alt" content="Plata Invest">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23232f3a'/%3E%3Ctext x='32' y='34' text-anchor='middle' dominant-baseline='central' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='32' fill='%23b27a52'%3EA%3C/text%3E%3C/svg%3E">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Plata Invest — AI Investing Workspace for Canada | Plata Invest">
-<meta name="twitter:description" content="Plata Invest CA gives Canadian traders an AI-led investing workspace with analytics, risk controls and multi-asset coverage. Open your Plata Invest account today.">
-<meta name="twitter:image" content="https://plata-invest-ca.com/images/logo.png">
-<meta name="twitter:url" content="https://plata-invest-ca.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
 
-<link rel="canonical" href="https://plata-invest-ca.com/">
-<link rel="alternate" hreflang="en-CA" href="https://plata-invest-ca.com/">
-<link rel="alternate" hreflang="en" href="https://plata-invest-ca.com/">
-<link rel="alternate" hreflang="x-default" href="https://plata-invest-ca.com/">
+  <link rel="stylesheet" href="/css/intlTelInput.css">
+  <link rel="stylesheet" href="/css/flag-icons.min.css">
+  <link rel="stylesheet" href="/css/main.css">
 
-<link rel="shortcut icon" href="/images/fav.png">
-<link rel="icon" href="/images/fav.png" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/fav.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/fav.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700;800&family=Questrial&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="/css/style.min.css">
-<link rel="stylesheet" href="/css/intlTelInput.css">
-<link rel="stylesheet" href="/css/toastr.css">
-<link rel="stylesheet" href="/css/theme.css">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://plata-invest-ca.com/#organization",
-      "name": "Plata Invest",
-      "url": "https://plata-invest-ca.com/",
-      "logo": "https://plata-invest-ca.com/images/logo.png",
-      "areaServed": { "@type": "Country", "name": "Canada" },
-      "contactPoint": [{
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "email": "info@plata-invest-ca.com",
-        "areaServed": "CA",
-        "availableLanguage": ["en"]
-      }]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://plata-invest-ca.com/#website",
-      "name": "Plata Invest",
-      "url": "https://plata-invest-ca.com/",
-      "inLanguage": "en-CA",
-      "publisher": { "@id": "https://plata-invest-ca.com/#organization" }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://plata-invest-ca.com/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the Plata Invest platform and how does it operate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "It is an AI-led investing workspace that watches Canadian and global markets, surfaces scenarios, and supplies analytics, alerts and exposure tools so you can keep execution disciplined while staying in charge of every order."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why Invest Plata for cross-asset access?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The workspace links analytics, broker connectivity and risk monitoring in one screen, so a Canadian user can move between crypto, FX, equities and CFDs without juggling separate tools or losing oversight of total exposure."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What do recent Plata Invest reviews from active users highlight?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Active users typically mention cleaner dashboards, the speed of signal generation, the structure that built-in risk prompts add to a session, and the value of a single workspace for screening Canadian and international markets."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does AI-assisted trading differ from manual trading?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "AI-assisted flows shift heavy analysis to the machine: pattern checks, scenario ranges and risk prompts run in the background. Manual trading depends on constant chart watching and personal discretion, which is harder to sustain across long sessions."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Plata Invest crypto coverage suitable for new investors?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "New investors get guided onboarding, plain-language explainers, scenario context and structured risk limits before any live order. Digital assets remain volatile, so beginners should keep position sizes small and lean on the platform's guardrails."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is the workspace built for the Canadian market specifically?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Defaults, broker connections and onboarding language are tuned to Canada, while market coverage extends to global venues so users in Toronto, Vancouver and Montreal can act on local and international setups from the same dashboard."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What are typical Plata Invest investments in a balanced setup?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A balanced setup usually mixes large-cap equities, a small allocation to digital assets, a couple of FX or commodity ideas and a cash buffer. The platform tracks the blend and warns when one bucket grows out of proportion to your risk plan."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does Plata Invest CA guarantee profits?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No service can guarantee profits in live markets. Plata Invest CA reduces guesswork with data and structure, but capital is always at risk. Outcomes depend on market conditions, your strategy and how strictly you follow the risk controls you set."
-          }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://anlagstein-swiss.com/#organization",
+        "name": "Anlagstein",
+        "url": "https://anlagstein-swiss.com/",
+        "logo": "https://anlagstein-swiss.com/images/logo.svg",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "info@anlagstein-swiss.com",
+          "contactType": "customer support",
+          "areaServed": "CH",
+          "availableLanguage": ["de"]
         }
-      ]
-    }
-  ]
-}
-</script>
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://anlagstein-swiss.com/#website",
+        "name": "Anlagstein",
+        "url": "https://anlagstein-swiss.com/",
+        "inLanguage": "de-CH",
+        "publisher": { "@id": "https://anlagstein-swiss.com/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://anlagstein-swiss.com/#webpage",
+        "url": "https://anlagstein-swiss.com/",
+        "name": "Anlagstein – Krypto Trading Plattform Schweiz | Anlagstein",
+        "description": "Anlagstein bündelt Marktanalyse, Krypto-Trading-Werkzeuge und persönliche Beratung in einer Schweizer Plattform – jetzt fundiert starten und Zugang anfragen.",
+        "isPartOf": { "@id": "https://anlagstein-swiss.com/#website" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Was ist Anlagstein und wofür wird die Plattform genutzt?", "acceptedAnswer": { "@type": "Answer", "text": "Anlagstein ist ein geführter Arbeitsbereich für Krypto-Marktbeobachtung, Portfolio-Skizzen und die Vorbereitung einer persönlichen Beratung in der Schweiz." } },
+          { "@type": "Question", "name": "Ist Anlagstein für Einsteiger im Krypto-Markt geeignet?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Anlagstein strukturiert Marktinformationen, Begriffe und Werkzeuge so, dass auch neue Nutzer einen klaren Überblick gewinnen, bevor sie eine Anfrage abschicken." } },
+          { "@type": "Question", "name": "Welche Daten und Werkzeuge stellt Anlagstein bereit?", "acceptedAnswer": { "@type": "Answer", "text": "Die Plattform bietet eine Krypto-Druckkarte, Tool-Konsolen für Terminal, Portfolio und KI-Notizen sowie einen Planungsrechner für Beispielszenarien rund um Kapitalbereiche." } },
+          { "@type": "Question", "name": "Verspricht Anlagstein Renditen oder garantierte Ergebnisse?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Anlagstein liefert Marktkontext, Bildungsmaterial und einen geordneten Ablauf, jedoch keine Renditegarantie. Jede Investitionsentscheidung bleibt eigenverantwortlich." } },
+          { "@type": "Question", "name": "Wie melde ich mich bei Anlagstein an und wer kontaktiert mich?", "acceptedAnswer": { "@type": "Answer", "text": "Sie füllen das Anfrageformular mit Name, E-Mail und Telefonnummer aus. Ein Spezialist meldet sich anschließend, um Kapitalbereich, Tools und nächste Schritte gemeinsam durchzugehen." } },
+          { "@type": "Question", "name": "Welche Risiken sind mit dem Krypto-Markt verbunden?", "acceptedAnswer": { "@type": "Answer", "text": "Kryptowährungen sind volatil und können erheblich an Wert verlieren. Setzen Sie nur Kapital ein, dessen vollständiger Verlust für Sie verkraftbar wäre, und prüfen Sie die Rechtslage in der Schweiz." } },
+          { "@type": "Question", "name": "Kostet die Nutzung von Anlagstein etwas?", "acceptedAnswer": { "@type": "Answer", "text": "Die Marktübersicht, die Werkzeuge und das Anfrageformular sind kostenfrei zugänglich. Etwaige Spesen oder Gebühren werden im Beratungsgespräch transparent dargestellt." } },
+          { "@type": "Question", "name": "Wie schützt Anlagstein meine personenbezogenen Daten?", "acceptedAnswer": { "@type": "Answer", "text": "Alle Eingaben werden gemäß unserer Datenschutzrichtlinie verarbeitet, ausschließlich für die angefragte Beratung verwendet und nicht an unbeteiligte Dritte weitergegeben." } }
+        ]
+      }
+    ]
+  }
+  </script>
 
+  <script defer src="/js/intlTelInput.min.js"></script>
+  <script defer src="/js/main.js"></script>
 </head>
-
 <body>
 
-<header class="header">
-  <div class="header__container">
-    <div class="header__body">
-      <a class="header__logo" href="/" aria-label="Plata Invest home">
-        <img src="/images/logo.png" alt="Plata Invest logo">
-      </a>
-
-      <div class="menu">
-        <nav class="menu__body">
-          <ul class="menu__list">
-            <li class="menu__item _active" data-menu-item><a class="menu__link" href="/">Home</a></li>
-            <li class="menu__item" data-menu-item><a class="menu__link" href="/about/">About Us</a></li>
-            <li class="menu__item" data-menu-item><a class="menu__link" href="/contact/">Contacts</a></li>
-            <li class="menu__item menu__item-lang" data-menu-item>
-              <div class="header-actions__action header-actions--mob">
-                <a class="sign-btn sign-btn--transparent" href="/order/">Sign Up</a>
-              </div>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class="header__main">
-        <div class="header-actions">
-          <div class="header-actions__action header-actions--desc">
-            <a class="sign-btn sign-btn--transparent" href="/order/">Sign Up</a>
-          </div>
-        </div>
-      </div>
-
-      <button class="menu-icon" type="button" data-link="menu__body" aria-label="Toggle navigation">
-      </button>
-    </div>
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="/" aria-label="Anlagstein – Startseite">
+      <span class="brand__mark" aria-hidden="true">A</span>
+      <span class="brand__name">Anlagstein</span>
+    </a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="/" class="is-active">Start</a>
+      <a href="/#tools">Plattform</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/author/">Autor</a>
+      <a href="/contact/">Kontakt</a>
+      <a href="/sign-up/" class="nav__cta">Konto eröffnen</a>
+    </nav>
+    <button class="burger" type="button" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" aria-label="Mobile Navigation">
+    <a href="/" class="is-active">Start</a>
+    <a href="/#tools">Plattform</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/author/">Autor</a>
+    <a href="/contact/">Kontakt</a>
+    <a href="/sign-up/" class="nav__cta">Konto eröffnen</a>
   </div>
 </header>
 
 <main>
 
-  <section class="section-hero">
-    <div class="container">
-      <div class="hero">
-        <img class="hero__img hero__img--mob" src="/images/hero-mb-bg.png" alt="Plata Invest workspace preview" width="274" height="189" loading="eager" fetchpriority="high">
-        <h1 class="hero__title">Plata Invest</h1>
-        <p class="hero__subtitle font-questrial">
-          Open an AI-led investing workspace tuned for Canadian traders. Run market screens, follow data-driven scenarios and keep every position framed by your own risk limits — all from one calm, focused dashboard built for serious investing in 2026.
-        </p>
-        <a class="sign-btn sign-btn--md hero__sign-btn" href="/order/">Sign Up Now</a>
+<section class="field-hero" id="field">
+  <div class="field-bg" aria-hidden="true"></div>
+  <div class="wrap field-grid">
+    <div class="hero-copy">
+      <div class="query-brand" aria-label="Marke">
+        <span class="query-brand__mark" aria-hidden="true">A</span>
+        <span>Schweizer Krypto-Workspace</span>
+      </div>
+      <span class="eyebrow">Strukturierter Marktzugang 2026</span>
+      <h1>Anlagstein</h1>
+      <p class="lede">Verschaffen Sie sich einen klaren Überblick über den Krypto-Markt, bevor Sie aktiv werden: visuelle Druckkarten, geordnete Werkzeuge, ein transparenter Planungsrechner und eine persönliche Beratung – alles in einer ruhigen, finanztechnisch sauber gestalteten Schweizer Umgebung.</p>
+      <p class="lede">Wir arbeiten bewusst mit gedämpften Farben, lesbarer Typografie und konsistenten Abständen. So bleibt die Aufmerksamkeit auf Marktdaten, Eigenanalyse und Ihrer Fragestellung – statt auf Effekten, blinkenden Charts oder reißerischen Botschaften, wie sie in der Krypto-Welt leider noch verbreitet sind.</p>
+      <div class="brief-actions">
+        <a class="btn btn--primary" href="/sign-up/">Konto eröffnen</a>
+        <a class="btn btn--ghost" href="#tools">Werkzeuge ansehen</a>
       </div>
     </div>
-  </section>
 
-  <section class="section partners">
-    <div class="partners__container container">
-      <h2 class="partners__title">Trusted across the Canadian trading community</h2>
-      <div class="partners__items">
-        <div class="partners__item"><img src="/images/8.svg" alt="Partner network logo" loading="lazy"></div>
-        <div class="partners__item"><img src="/images/6.svg" alt="Liquidity partner logo" loading="lazy"></div>
-        <div class="partners__item"><img src="/images/1.svg" alt="Data feed partner logo" loading="lazy"></div>
-        <div class="partners__item"><img src="/images/5.svg" alt="Broker partner logo" loading="lazy"></div>
-        <div class="partners__item"><img src="/images/7.svg" alt="Custody partner logo" loading="lazy"></div>
-        <div class="partners__item"><img src="/images/3.svg" alt="Compliance partner logo" loading="lazy"></div>
-        <div class="partners__item"><img src="/images/4.svg" alt="Analytics partner logo" loading="lazy"></div>
-        <div class="partners__item"><img src="/images/2.svg" alt="Payments partner logo" loading="lazy"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="calculate">
-        <div class="calculate__inner">
-          <div class="calculate__form">
-            <label class="calculate__label font-questrial">
-              Enter your starting capital
-              <div class="calculate__amount-inner">
-                <span class="calculate__currency" id="symbol">$</span>
-                <input class="main-calc__input input" id="value" value="250" data-min="250" data-max="100000" type="number">
-              </div>
-            </label>
-
-            <div class="calculate__range-block">
-              <div class="calculate__range-label font-questrial">Pick a capital growth window</div>
-              <div class="calculate__range-years" id="days" data-day="day" data-days="days" data-days-many="days"></div>
-              <input type="range" id="range" min="1" max="100" value="5" class="calculate__range">
+    <div class="hero-form">
+      <section class="lead-card" id="contact" aria-labelledby="contact-heading">
+        <div class="lead-card__head">
+          <span class="eyebrow">Beratungsanfrage</span>
+          <h2 id="contact-heading">Geführte Marktberatung anfragen</h2>
+          <p>Hinterlassen Sie Ihre Eckdaten – ein Spezialist meldet sich, um Werkzeuge, Kapitalbereich und nächste Schritte gemeinsam mit Ihnen einzuordnen.</p>
+        </div>
+        <form class="contact-form lead-form" id="form" method="post" action="/thank-you/" novalidate>
+          <input type="hidden" name="src" value="Anlagstein">
+          <div class="form-row">
+            <div class="form-field input_group" data-field="first_name">
+              <label class="form-label" for="first_name">Vorname</label>
+              <input class="rf-form-input" type="text" autocomplete="given-name" placeholder="Ihr Vorname" name="first_name" id="first_name" required>
+              <span class="err">Bitte tragen Sie Ihren Vornamen ein.</span>
+            </div>
+            <div class="form-field input_group" data-field="last_name">
+              <label class="form-label" for="last_name">Nachname</label>
+              <input class="rf-form-input" type="text" autocomplete="family-name" placeholder="Ihr Nachname" name="last_name" id="last_name" required>
+              <span class="err">Bitte tragen Sie Ihren Nachnamen ein.</span>
             </div>
           </div>
-
-          <div class="calculate__result">
-            <div class="calculate__result-top">
-              <div class="calculate__balance-title font-questrial">Projected future balance</div>
-              <div class="calculate__balance-amount"><span id="ammount" data-locale="en-CA" data-rate="0.05"></span></div>
+          <div class="form-field input_group" data-field="email">
+            <label class="form-label" for="email">E-Mail-Adresse</label>
+            <input class="rf-form-input" type="email" autocomplete="email" placeholder="name@beispiel.ch" name="email" id="email" required>
+            <span class="err">Bitte geben Sie eine gültige E-Mail-Adresse an.</span>
+          </div>
+          <div class="form-field input_group" data-field="phone">
+            <label class="form-label" for="phone_input">Telefonnummer</label>
+            <div class="iti-wrap">
+              <input class="rf-form-input phone_input" type="tel" autocomplete="tel" id="phone_input" name="phone" required>
             </div>
+            <span class="error-msg err hide">Bitte prüfen Sie Ihre Telefonnummer.</span>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="sign">
-        <div>
-          <h2 class="sign__title">Plata Invest platform: AI-driven workflows for Canadian markets</h2>
-          <p class="sign__text font-questrial">Drop your contact details below and a Canadian onboarding specialist will walk you through dashboards, broker linking and risk presets — usually within one business day.</p>
-        </div>
-
-        <div class="main-form">
-          <div class="main-form__container _container">
-            <div class="main-form__body">
-              <form class="main-form__form form _loading" name="form" data-form data-validation data-after="mainFormAfterSubmit" data-autocomplete-off>
-                <div class="form__section">
-                  <div class="form__row form__row_1">
-                    <div class="form__top">
-                      <div class="form__column">
-                        <input class="form__input input" type="text" name="firstname" placeholder="First Name">
-                      </div>
-                      <div class="form__column">
-                        <input class="form__input input" type="text" name="lastname" placeholder="Last Name">
-                      </div>
-                    </div>
-                    <div class="form__row form__row_1">
-                      <div class="form__column">
-                        <input class="form__input input" type="email" name="email" placeholder="Your Email">
-                      </div>
-                      <div class="form__column">
-                        <input class="form__input input" placeholder="Phone" type="tel" name="phone" data-phone>
-                      </div>
-                      <div class="form__column">
-                        <button class="form__btn btn btn_fw" type="submit">Sign Up Now</button>
-                      </div>
-                      <div class="form__column form-message"></div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-              <div class="main-form__footer">
-                <p class="main-form__footer-text">By continuing you confirm that you have read and accept our <a class="form__link" href="/privacy/">Privacy Policy</a> and <a class="form__link" href="/terms/">Terms and Conditions</a>, and that you agree to be contacted about your account.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--grey">
-    <div class="container">
-      <h2 class="promo__title text-center">Inside the Plata Invest CA workspace</h2>
-
-      <div class="promo__inner promo__inner--reverse">
-        <img src="/images/access-img.webp" alt="Plata Invest CA workspace dashboard preview" width="608" height="301" loading="lazy">
-
-        <div class="promo__boxes">
-          <div class="promo__box">
-            <p>
-              The workspace was built so a Canadian trader can move from a blank screen to a structured decision in minutes, without flipping between half a dozen tabs. Charts, scenario notes, exposure totals and order tickets sit side by side, and every panel updates from the same live data feed, so what you see in the watchlist is what the order ticket prices a second later. Machine learning watches multiple markets in parallel, ranks the patterns that historically led somewhere, and trims away the noise that usually clutters a discretionary session. The result is a calmer, faster way of working — you spend less time hunting for what changed and more time deciding what to do about it.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="promo__title text-center">Why pick AI-powered investing tools in 2026?</h2>
-
-      <div class="promo__inner">
-        <div class="promo__boxes">
-          <div class="promo__box promo__box--blue">
-            <p>
-              AI tooling earns its place by combining live analytics, automation and account security in one continuous loop. Instead of waiting until the end of the session to review what you missed, the workspace flags shifts as they happen, supplies probability ranges instead of bare price targets, and reminds you when an open position drifts past the limits you set at the start of the day. For a Canadian investor that mix of speed, structure and discipline is hard to match with stand-alone tools — especially across markets that trade outside Eastern Time.
-            </p>
-          </div>
-        </div>
-
-        <img src="/images/maximize-img.webp" alt="Charts and scenario panels driven by AI analytics" width="608" height="408" loading="lazy">
-      </div>
-    </div>
-  </section>
-
-  <section class="section pt-0">
-    <div class="container">
-      <div class="why">
-        <h3>Layered account security</h3>
-        <p>Account data, order flow and reporting move through encryption, hardware-token-friendly logins and round-the-clock monitoring, so credentials and balances stay where they belong.</p>
-
-        <h3>Tailored, learning analytics</h3>
-        <p>The signal engine adapts to the instruments you actually watch and the risk profile you save during setup, so the alerts you receive in week six are sharper than the ones from day one.</p>
-
-        <h3>Faster, evidence-led outcomes</h3>
-        <p>Pre-built playbooks pair live prices, scenario ranges and exposure totals on a single screen, so the gap between spotting a setup and acting on it shrinks from minutes to seconds — without skipping any of the risk checks.</p>
-
-        <a class="sign-btn sign-btn--md why__sign-btn" href="/order/">Sign Up</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-how">
-    <div class="container">
-      <div class="how">
-        <h2 class="how__title text-center">How does AI-assisted market trading actually run?</h2>
-
-        <div class="item__boxes-top">
-          <p class="font-questrial item__box--wide">
-            Behind the dashboard an automation layer watches order books, news feeds and momentum signals in parallel. Predictive models stitch the inputs into ranked scenarios and assign each one a risk score, so by the time a setup reaches your screen it has already been compared with thousands of historical analogues. You still decide whether to take the trade — the platform simply hands you a cleaner question to answer.
-          </p>
-          <div class="item__box item__box--sm item__box--wide item__box--noafter">
-            <h3 class="item__box-title">Multi-layer protection</h3>
-            <p class="item__box-text">
-              Sign-in, account state and transfer flows are wrapped in layered checks: device fingerprinting, secure session tokens and continuous review of unusual events.
-            </p>
-          </div>
-        </div>
-
-        <div class="item__boxes-bottom">
-          <div class="item__box item__box--sm item__box--noafter">
-            <h3 class="item__box-title">Adaptive playbooks</h3>
-            <p class="item__box-text">
-              Set rules around goals and risk tolerance and let the models retune as live performance data comes in, so the playbook stays in sync with the market you are actually facing.
-            </p>
-          </div>
-
-          <div class="item__box item__box--sm item__box--noafter">
-            <h3 class="item__box-title">Live, data-driven readings</h3>
-            <p class="item__box-text">
-              Stream live signals, breadth indicators and scenario ranges that let you stay decisive when Toronto and New York sessions overlap and volatility spikes.
-            </p>
-          </div>
-
-          <div class="item__box item__box--sm item__box--noafter">
-            <h3 class="item__box-title">Calm, intuitive layout</h3>
-            <p class="item__box-text">
-              A focused interface keeps watchlists, open positions and performance metrics close at hand, so day-to-day operation never feels noisy or rushed.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="sign">
-        <div>
-          <h2 class="sign__title">Plata Invest investments: scale your strategy with discipline</h2>
-          <p class="sign__text font-questrial">
-            Get continuous market intelligence paired with automation that surfaces interesting setups while keeping risk in plain sight. Strategy optimisation, decision support and exposure dashboards help cut manual screening, smooth out consistency in fast markets and keep every position aligned with the plan you set at sign-up. Ambitious targets are possible, including the potential to grow a starter balance by 200%+ over a short window, but outcomes depend on market behaviour, your strategy and the risk discipline you actually apply — there are no guarantees.
-          </p>
-        </div>
-
-        <div class="main-form">
-          <div class="main-form__container _container">
-            <div class="main-form__body">
-              <form class="main-form__form form _loading" name="form" data-form data-validation data-after="mainFormAfterSubmit" data-autocomplete-off>
-                <div class="form__section">
-                  <div class="form__row form__row_1">
-                    <div class="form__top">
-                      <div class="form__column">
-                        <input class="form__input input" type="text" name="firstname" placeholder="First Name">
-                      </div>
-                      <div class="form__column">
-                        <input class="form__input input" type="text" name="lastname" placeholder="Last Name">
-                      </div>
-                    </div>
-
-                    <div class="form__row form__row_1">
-                      <div class="form__column">
-                        <input class="form__input input" type="email" name="email" placeholder="Your Email">
-                      </div>
-                      <div class="form__column">
-                        <input class="form__input input" type="tel" placeholder="Phone" name="phone" data-phone>
-                      </div>
-                      <div class="form__column">
-                        <button class="form__btn btn btn_fw" type="submit">Sign Up Now</button>
-                      </div>
-                      <div class="form__column form-message"></div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-              <div class="main-form__footer">
-                <p class="main-form__footer-text">By continuing you confirm that you have read and accept our <a class="form__link" href="/privacy/">Privacy Policy</a> and <a class="form__link" href="/terms/">Terms and Conditions</a>, and that you agree to be contacted about your account.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section pt-0">
-    <div class="container">
-      <div class="trading">
-        <h2 class="trading__title text-center">Plata Invest crypto: structured access for digital assets</h2>
-
-        <div class="promo__inner promo__inner--reverse trading__promo-inner">
-          <img src="/images/trading-img.webp" alt="Plata Invest crypto charting and risk panel" width="608" height="408" loading="lazy">
-
-          <div class="promo__boxes trading__promo-boxes">
-            <div class="promo__box promo__box--blue">
-              <p>
-                Digital assets move quickly and reward steady hands, not impulsive ones. The workspace pairs trend confirmation, volatility filters and exposure limits that adjust to changing conditions, then reads price action, liquidity shifts and momentum together to highlight the higher-quality setups and tone down the noise. You see fewer alerts, but each one is anchored in data you can verify on the same screen, which makes building a long-term routine around crypto far easier than juggling separate apps.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="promo__inner">
-          <div class="item__box item__box--sm item__box--noafter trading__item-box">
-            <h3 class="item__box-title">What about the risks?</h3>
-            <p class="item__box-text">
-              Crypto markets carry sharp drawdowns and overnight gaps. The workspace surfaces risk-aware decision support — scenario ranges, exposure caps and reminder prompts — but no tool removes risk. Capital remains at risk and outcomes are never guaranteed.
-            </p>
-          </div>
-
-          <div class="item__box item__box--sm item__box--noafter trading__item-box">
-            <h3 class="item__box-title">New to crypto? Guided onboarding helps.</h3>
-            <p class="item__box-text">
-              Start with a step-by-step setup that walks through core concepts using dashboards, short explainers and practical demos. From a first deposit to reading signals and setting risk caps, the structured path keeps beginner mistakes to a minimum.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--grey">
-    <div class="container">
-      <div class="solution">
-        <h2 class="text-center">Your multi-asset trading solutions for Canada</h2>
-
-        <div class="promo__inner">
-          <div class="promo__boxes">
-            <div class="promo__box promo__box--transparent solution__promo-box">
-              <h3>Cryptocurrency coverage</h3>
-              <p>Stream real-time intelligence, momentum readings and risk prompts tuned to the rhythm of digital-asset markets across all major time zones.</p>
-
-              <h3>Cross-market screening</h3>
-              <p>Track multiple venues with automation support and data-backed cues that surface opportunities across equities, commodities and broad indices.</p>
-
-              <h3>Currency markets</h3>
-              <p>Analyse FX pairs with models tuned for trend confirmation, volatility regime changes and clean entry zones around major economic releases.</p>
-
-              <h3>Bitcoin and large-cap crypto</h3>
-              <p>Follow performance, weigh scenario guidance and lean on structured signals built to keep risk-defined execution simple and repeatable.</p>
-            </div>
-
-            <a class="sign-btn sign-btn--md sign-btn--blue solution__sign-btn" href="/order/">Sign Up</a>
-          </div>
-
-          <img src="/images/phone.webp" alt="Plata Invest mobile workspace view" width="608" height="662" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="text-center">Why traders pick Plata Invest canada</h2>
-
-      <div class="promo__inner">
-        <img class="hide-mb" src="/images/benefit-img.webp" alt="Multi-asset benefits illustration" width="608" height="460" loading="lazy">
-
-        <div class="promo__boxes">
-          <div class="promo__box promo__box--transparent solution__promo-box">
-
-            <h3>Security and clean operations</h3>
-            <p>Encryption, layered authentication and continuous monitoring keep account activity, settlement flows and reporting locked down.</p>
-
-            <h3>Sharper analytics every week</h3>
-            <p>Models keep assessing live conditions, lift the meaningful patterns out of the noise and translate them into prompts you can act on without spreadsheets.</p>
-
-            <h3>Transparency you can verify</h3>
-            <p>Clear workflows, plain-English dashboards and consistent performance tracking keep you in charge of what was decided and why.</p>
-
-            <h3>Built for any experience level</h3>
-            <p>Newer traders lean on guided playbooks, while advanced users can layer custom rules and tighter risk caps — the workspace grows with the user.</p>
-          </div>
-
-          <img class="show-mb" src="/images/benefit-img.webp" alt="Multi-asset benefits illustration (mobile)" width="608" height="460" loading="lazy">
-
-          <a class="sign-btn sign-btn--md sign-btn--blue self-center" href="/order/">Sign Up</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-details">
-    <div class="container">
-      <h2 class="text-center">Platform overview at a glance</h2>
-      <div class="details">
-        <h3>Platform type</h3>
-        <p>AI-led investing workspace focused on analytics, automation and decision support across digital assets, FX, equities and CFDs.</p>
-
-        <h3>Supported assets</h3>
-        <p>Digital assets, major currency pairs, CFDs where broker eligibility allows and equities access through integrated trading partners.</p>
-
-        <h3>Data protection</h3>
-        <p>Encryption, multi-factor sign-in and continuous review of unusual events designed to keep account and order data safe.</p>
-
-        <h3>Cost</h3>
-        <p>No upfront access fee for the core workspace; broker-related spreads, financing and execution costs still apply.</p>
-
-        <h3>Flexible deposits</h3>
-        <p>Funding through the broker layer, including Interac, bank transfer and card options where the partner supports them in Canada.</p>
-
-        <h3>Anywhere access</h3>
-        <p>Open the workspace on desktop, tablet or mobile, subject to broker eligibility and your local connection quality.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="text-center">Is this a trusted investing platform in Canada?</h2>
-
-      <div class="promo__inner">
-        <div class="promo__boxes">
-          <div class="promo__box promo__box--blue">
-            <p>
-              Trust is earned through transparent operations, security-first design and honest communication about risk. The workspace runs on encryption, hardened access controls and constant monitoring of account activity, so the surface area for trouble stays small. Beyond the technology, the platform connects only with broker partners that work under recognised regulatory frameworks, which keeps the user experience consistent and easier to verify. Instrument availability, leverage and account conditions still depend on local rules and the broker you link with at sign-up.
-            </p>
-          </div>
-        </div>
-
-        <img src="/images/legitimate-img.webp" alt="Trust and compliance illustration" width="608" height="408" loading="lazy">
-      </div>
-
-      <a class="sign-btn sign-btn--md sign-btn--blue sign-btn--center" href="/order/">Sign Up</a>
-    </div>
-  </section>
-
-  <section class="section section--grey">
-    <div class="container">
-      <h2 class="text-center">Plata Invest reviews from active users</h2>
-
-      <div class="experience">
-        <h3>Copy-strategy support</h3>
-        <p>Users say they appreciate being able to follow and replicate selected approaches with full performance tracking and structured analytics.</p>
-
-        <h3>Fractional positioning</h3>
-        <p>Reviews highlight flexible entry sizing on high-value instruments, which makes diversification far easier on a modest starter balance.</p>
-
-        <h3>Learning resources</h3>
-        <p>Short explainers, weekly market summaries and practical dashboards keep raising the quality of decisions over time — a common theme in feedback.</p>
-
-        <h3>Mobile-ready trading</h3>
-        <p>Active users mention staying on top of alerts, watchlists and open positions from a phone without feeling like the workspace lost any depth.</p>
-
-        <h3>24/7 assistance</h3>
-        <p>Round-the-clock support keeps onboarding moving and unblocks day-to-day questions about deposits, verifications and platform settings.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="sign">
-        <div>
-          <h2 class="sign__title">Registration — create your account in minutes</h2>
-          <div class="sign__text font-questrial">
-            <h4>Step 1 — Sign up</h4>
-            <p>Add your contact details and pick the credentials you want to use.</p>
-            <br><br>
-            <h4>Step 2 — Verify access</h4>
-            <p>Confirm your email and complete any extra verification steps required by the broker layer.</p>
-            <br><br>
-            <h4>Step 3 — Fund your account</h4>
-            <p>Choose a deposit method that suits you and set initial risk preferences before going live.</p>
-            <br><br>
-            <h4>Step 4 — Start investing</h4>
-            <p>Open the dashboard, follow the signals you trust and execute trades with the risk caps you set up at the start.</p>
-          </div>
-        </div>
-
-        <div class="main-form">
-          <div class="main-form__container _container">
-            <div class="main-form__body">
-              <form class="main-form__form form _loading" name="form" data-form data-validation data-after="mainFormAfterSubmit" data-autocomplete-off>
-                <div class="form__section">
-                  <div class="form__row form__row_1">
-                    <div class="form__top">
-                      <div class="form__column">
-                        <input class="form__input input" type="text" name="firstname" placeholder="First Name">
-                      </div>
-                      <div class="form__column">
-                        <input class="form__input input" type="text" name="lastname" placeholder="Last Name">
-                      </div>
-                    </div>
-
-                    <div class="form__row form__row_1">
-                      <div class="form__column">
-                        <input class="form__input input" type="email" name="email" placeholder="Your Email">
-                      </div>
-                      <div class="form__column">
-                        <input class="form__input input" type="tel" name="phone" placeholder="Phone" data-phone>
-                      </div>
-                      <div class="form__column">
-                        <button class="form__btn btn btn_fw" type="submit">Sign Up Now</button>
-                      </div>
-                      <div class="form__column form-message"></div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-              <div class="main-form__footer">
-                <p class="main-form__footer-text">By continuing you confirm that you have read and accept our <a class="form__link" href="/privacy/">Privacy Policy</a> and <a class="form__link" href="/terms/">Terms and Conditions</a>, and that you agree to be contacted about your account.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="faq">
-        <h2>FAQ — Plata Invest CA</h2>
-
-        <h3>What is the Plata Invest platform and how does it operate?</h3>
-        <p>It is an AI-led investing workspace that watches Canadian and global markets, surfaces scenarios and supplies analytics, alerts and exposure tools so you can keep execution disciplined while staying in charge of every order.</p>
-
-        <h3>Why Invest Plata for cross-asset access?</h3>
-        <p>The workspace links analytics, broker connectivity and risk monitoring in one screen, so a Canadian user can move between crypto, FX, equities and CFDs without juggling separate tools or losing oversight of total exposure.</p>
-
-        <h3>What do recent Plata Invest reviews from active users highlight?</h3>
-        <p>Active users typically mention cleaner dashboards, the speed of signal generation, the structure that built-in risk prompts add to a session, and the value of a single workspace for screening Canadian and international markets.</p>
-
-        <h3>How does AI-assisted trading differ from manual trading?</h3>
-        <p>AI-assisted flows shift heavy analysis to the machine: pattern checks, scenario ranges and risk prompts run in the background. Manual trading depends on constant chart watching and personal discretion, which is harder to sustain across long sessions.</p>
-
-        <h3>Is Plata Invest crypto coverage suitable for new investors?</h3>
-        <p>New investors get guided onboarding, plain-language explainers, scenario context and structured risk limits before any live order. Digital assets remain volatile, so beginners should keep position sizes small and lean on the platform's guardrails.</p>
-
-        <h3>Is the workspace built for the Canadian market specifically?</h3>
-        <p>Yes. Defaults, broker connections and onboarding language are tuned to Canada, while market coverage extends to global venues so users in Toronto, Vancouver and Montreal can act on local and international setups from the same dashboard.</p>
-
-        <h3>What are typical Plata Invest investments in a balanced setup?</h3>
-        <p>A balanced setup usually mixes large-cap equities, a small allocation to digital assets, a couple of FX or commodity ideas and a cash buffer. The platform tracks the blend and warns when one bucket grows out of proportion to your risk plan.</p>
-
-        <h3>Does Plata Invest CA guarantee profits?</h3>
-        <p>No service can guarantee profits in live markets. Plata Invest CA reduces guesswork with data and structure, but capital is always at risk. Outcomes depend on market conditions, your strategy and how strictly you follow the risk controls you set.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="container">
-    <div class="risk-banner">
-      <strong>18+ risk disclosure.</strong> Trading FX, CFDs, equities and crypto-assets is highly speculative and may not be suitable for every investor. You can lose part or all of your capital — never trade with funds you cannot afford to lose. The Plata Invest workspace provides analytics and decision support and does not constitute financial, tax or legal advice. Availability of instruments depends on broker eligibility and your province of residence in Canada.
+          <button type="submit" class="form-submit">Beratung anfordern</button>
+          <p class="form-note">Mit dem Absenden bestätigen Sie unsere <a href="/terms-of-use/">Nutzungsbedingungen</a> und die <a href="/privacy-policy/">Datenschutzrichtlinie</a> und stimmen einer Kontaktaufnahme zu.</p>
+        </form>
+      </section>
     </div>
   </div>
+</section>
+
+<aside class="floating-brief" id="floatingBrief" aria-label="Beratungsanfrage">
+  <a href="#contact">Beratung anfordern</a>
+</aside>
+
+<section class="signal-strip" aria-label="Marktstreifen">
+  <div class="strip-track">
+    <span>BTC/USDT <b>+1.8%</b></span>
+    <span>ETH/USDT <b>+2.4%</b></span>
+    <span>SOL/USDT <b>-0.9%</b></span>
+    <span>BNB/USDT <b>+0.6%</b></span>
+    <span>XRP/USDT <b>+1.1%</b></span>
+    <span>24h-Volumen Krypto <b>+7.2%</b></span>
+    <span>BTC-Dominanz <b>54.1%</b></span>
+    <span>ETH/BTC <b>+0.4%</b></span>
+    <span>Funding neutral</span>
+    <span>Stablecoin-Zufluss <b>+3.8%</b></span>
+    <span>Altcoin-Breite <b>62%</b></span>
+    <span>Volatilität moderat</span>
+    <span>BTC/USDT <b>+1.8%</b></span>
+    <span>ETH/USDT <b>+2.4%</b></span>
+    <span>SOL/USDT <b>-0.9%</b></span>
+    <span>BNB/USDT <b>+0.6%</b></span>
+    <span>XRP/USDT <b>+1.1%</b></span>
+    <span>24h-Volumen Krypto <b>+7.2%</b></span>
+    <span>BTC-Dominanz <b>54.1%</b></span>
+    <span>ETH/BTC <b>+0.4%</b></span>
+    <span>Funding neutral</span>
+    <span>Stablecoin-Zufluss <b>+3.8%</b></span>
+    <span>Altcoin-Breite <b>62%</b></span>
+    <span>Volatilität moderat</span>
+  </div>
+</section>
+
+<section class="market-field" id="market-field">
+  <div class="wrap market-field-grid">
+    <div class="market-field-copy reveal-item">
+      <span class="eyebrow">Marktdruckkarte – Krypto</span>
+      <h2>Anlagstein krypto – Marktdruck transparent erfassen</h2>
+      <p>Wechseln Sie zwischen Bitcoin, Ethereum, einem breiten Altcoin-Korb und ausgewählten DeFi-Token, um Momentum, Liquidität, Volatilität und Funding nebeneinander einzuordnen – ohne grafische Übertreibungen, mit klaren Skalen für ein wirklichkeitsnahes Bild.</p>
+      <p>Die Druckkarte ersetzt keine individuelle Empfehlung, hilft aber dabei, Marktphasen sauber zu benennen, bevor Sie eine Konsultation anfragen oder den Planungsrechner verwenden. Jede Kennzahl wird in ein und derselben Skala dargestellt, damit Vergleiche möglich werden – ein gestiegenes Funding bei BTC wirkt anders als bei einem Altcoin, und genau diese Differenzierung machen wir sichtbar.</p>
+      <p>Wer mehrere Segmente parallel beobachtet, erkennt schneller, ob ein scheinbar starker Anstieg von tatsächlicher Breite getragen wird oder nur in einer schmalen Gruppe stattfindet. Genau hier setzt die Druckkarte an: Sie liefert eine ehrliche, ruhige Übersicht, statt vermeintlich „heißer" Signale.</p>
+    </div>
+
+    <div class="field-visual reveal-item" aria-label="Krypto-Druckschnittstelle">
+      <div class="field-top">
+        <span>Marktdruck</span>
+        <b id="fieldScore">68</b>
+      </div>
+      <div class="field-body">
+        <div class="asset-rail">
+          <button type="button" class="is-active" data-asset="Bitcoin" data-score="68" data-bias="Akkumulation" data-flow="+1.8%" data-route="BTC Spot &amp; Perpetuals" data-context="ETF-Flüsse, Funding und Orderbuchtiefe" data-temp="Aktive Akkumulationszone">BTC</button>
+          <button type="button" data-asset="Ethereum" data-score="71" data-bias="Rotation" data-flow="+2.4%" data-route="ETH Spot, Staking &amp; L2 Beta" data-context="Gas-Aktivität, Restaking-Flüsse, L2-Volumen" data-temp="Selektive Rotation">ETH</button>
+          <button type="button" data-asset="Altcoin-Korb" data-score="59" data-bias="Kompression" data-flow="+0.7%" data-route="Large-Cap Alts &amp; Sektorenkörbe" data-context="BTC-Dominanz, Volumenstreuung, Unlock-Termine" data-temp="Range-Kompression">Alts</button>
+          <button type="button" data-asset="DeFi-Token" data-score="52" data-bias="Breakout-Watch" data-flow="-0.6%" data-route="DEX-, Lending- und Liquid-Stake-Token" data-context="TVL-Bewegung, Protokollerlöse, Liquiditätstiefe" data-temp="Breakout-Watch">DeFi</button>
+        </div>
+        <div class="map-canvas">
+          <svg viewBox="0 0 640 390" aria-hidden="true">
+            <defs>
+              <linearGradient id="line54" x1="0" x2="1">
+                <stop offset="0%" stop-color="#b27a52"></stop>
+                <stop offset="100%" stop-color="#4a6178"></stop>
+              </linearGradient>
+            </defs>
+            <path d="M70 300 C150 210 205 250 275 170 S410 90 560 125" fill="none" stroke="url(#line54)" stroke-width="4"></path>
+            <path d="M90 260 C160 292 220 210 295 232 S430 286 540 214" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="2" stroke-dasharray="7 8"></path>
+          </svg>
+          <span class="node n1"><i></i>Momentum</span>
+          <span class="node n2"><i></i>Liquidität</span>
+          <span class="node n3"><i></i>Volatilität</span>
+          <span class="node n4"><i></i>Timing</span>
+        </div>
+        <div class="field-readout">
+          <div><span>Segment</span><b id="assetOut">Bitcoin</b></div>
+          <div><span>Bias</span><b id="biasOut">Akkumulation</b></div>
+          <div><span>Bewegung</span><b id="flowOut">+1.8%</b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field-metrics reveal-item" aria-label="Krypto-Marktdetails">
+      <article><span>Route</span><b id="routeOut">BTC Spot &amp; Perpetuals</b></article>
+      <article><span>Kontext</span><b id="contextOut">ETF-Flüsse, Funding und Orderbuchtiefe</b></article>
+      <article><span>Status</span><b id="temperatureOut">Aktive Akkumulationszone</b></article>
+    </div>
+  </div>
+</section>
+
+<section class="tools-hub" id="tools">
+  <div class="wrap tools-layout">
+    <div class="tools-head reveal-item">
+      <span class="eyebrow">Werkzeugkonsole</span>
+      <h2>Anlagstein plattform für strukturierte Marktarbeit</h2>
+      <p>Wechseln Sie zwischen Terminal-, Portfolio- und KI-Notiz-Ansicht, um Marktinformationen geordnet aufzubereiten, bevor das eigentliche Beratungsgespräch beginnt. Jede Ansicht zeigt ausschließlich, was für die nächste Entscheidung relevant ist – keine bunten Animationen, keine unbelegten Versprechen.</p>
+      <p>Die Plattform ist als ruhiger Arbeitsplatz konzipiert: lesbare Kontraste, klare Hierarchien, vorhersehbare Reaktionen. So bleibt der Fokus auf den Daten und auf der eigenen Fragestellung, statt auf Effekten.</p>
+      <p>Im Terminal-Modus lassen sich Watchlists, Liquiditätszonen und Funding-Daten kompakt nebeneinander prüfen. Die Portfolio-Ansicht hilft, Konzentrationen und Szenario-Ausgaben zu vergleichen, ohne sofort komplexe Modelle bemühen zu müssen. Die KI-Notizen schließlich verdichten den Tagesstand zu einem nüchternen Vorbereitungstext, den Sie für das nächste Gespräch übernehmen können.</p>
+      <p>Alle Werkzeuge sind so verzahnt, dass Sie ohne Reibung von einer Sicht in die nächste wechseln. Wer mag, beginnt mit der Druckkarte und endet bei den KI-Notizen – wer eine konkrete Frage hat, springt direkt zur passenden Konsole. Beides ist gewollt: Die Reihenfolge gibt nicht das Tool vor, sondern Ihre Aufgabe.</p>
+    </div>
+
+    <div class="tools-console reveal-item">
+      <div class="tools-tabs" role="group" aria-label="Auswahl der Markttools">
+        <button type="button" class="is-active" data-tool="Integriertes Kontrollzentrum" data-copy="Ein gemeinsamer Arbeitsbereich für Markttemperatur, Portfolio-Skizze und Beratungsnotizen – ideal als Einstiegspunkt vor jedem Konsultationsgespräch." data-stat="Alle Werkzeuge" data-b1="Mehrere Marktsegmente im Blick" data-b2="Terminal-Kontext" data-b3="Portfolio-Indikatoren" data-b4="Beratungsnotizen">Alle</button>
+        <button type="button" data-tool="Preis- und Orderflow-Analyse" data-copy="Untersuchen Sie BTC, ETH und ausgewählte Krypto-Paare anhand kompakter Marktstruktur-, Liquiditäts- und Volatilitätsindikatoren." data-stat="Terminal-Modus" data-b1="Paar-Watchlists" data-b2="Liquiditätszonen" data-b3="Funding-Kontext" data-b4="Volatilitätshinweise">Terminal</button>
+        <button type="button" data-tool="Portfolio-Übersicht und Exposition" data-copy="Vergleichen Sie Kapitalbereiche, Konzentrationen und Marktszenarien, bevor Sie eine fachliche Einordnung anfordern." data-stat="Portfolio-Ansicht" data-b1="Expositionsbänder" data-b2="Kapitalbereiche" data-b3="Szenario-Ausgaben" data-b4="Risikoeinstufung">Portfolio</button>
+        <button type="button" data-tool="KI-gestützte Notizen zur Marktvorbereitung" data-copy="Verwandeln Sie Marktdaten in kompakte Notizen, die Ihnen helfen, eine Beratung sauber strukturiert vorzubereiten – ohne Ergebnisversprechen." data-stat="Signale" data-b1="Marktzusammenfassungen" data-b2="Bias-Notizen" data-b3="Zeitlicher Kontext" data-b4="Anfrage vorbereiten">KI-Notizen</button>
+      </div>
+      <div class="tools-content">
+        <div class="tools-copy">
+          <span id="toolStat">Alle Werkzeuge</span>
+          <h3 id="toolTitle">Integriertes Kontrollzentrum</h3>
+          <p id="toolCopy">Ein gemeinsamer Arbeitsbereich für Markttemperatur, Portfolio-Skizze und Beratungsnotizen – ideal als Einstiegspunkt vor jedem Konsultationsgespräch.</p>
+          <ul id="toolBullets">
+            <li>Mehrere Marktsegmente im Blick</li>
+            <li>Terminal-Kontext</li>
+            <li>Portfolio-Indikatoren</li>
+            <li>Beratungsnotizen</li>
+          </ul>
+          <a href="#contact">Beratung anfordern</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author-panel" id="author">
+  <div class="wrap">
+    <div class="author-card reveal-item" itemscope itemtype="https://schema.org/Person">
+      <div class="author-card__avatar" aria-hidden="true">MR</div>
+      <div class="author-card__copy">
+        <span class="eyebrow">Redaktionelle Prüfung</span>
+        <h2>Geprüft durch das Marktanalyse-Team</h2>
+        <a class="author-card__name" href="/author/" itemprop="url"><span itemprop="name">Marktanalyse-Redaktion</span></a>
+        <p class="author-card__role" itemprop="jobTitle">Redaktion für Krypto-Marktinhalte</p>
+        <p itemprop="description">Die Redaktion bewertet alle Plattform-Abläufe, Marktbegriffe und Onboarding-Texte, damit Besucher eine sachliche und nachvollziehbare Darstellung erhalten – ganz im Sinne einer seriösen Schweizer Finanzkommunikation.</p>
+        <a class="author-card__link" href="/author/">Autorenprofil ansehen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seo-faq" id="faq">
+  <div class="wrap seo-faq__head">
+    <span class="eyebrow">Wissensbasis</span>
+    <h2>Anlagstein erfahrungen – häufige Fragen vor der Anfrage</h2>
+    <p>Antworten auf die wichtigsten Punkte, die Besucher rund um Werkzeuge, Onboarding, Risiken und Support stellen, bevor sie sich für eine Beratung entscheiden.</p>
+  </div>
+  <div class="wrap seo-faq__grid">
+    <details class="seo-faq__item reveal-item" open>
+      <summary>Was ist Anlagstein und wofür wird die Plattform genutzt?</summary>
+      <p>Anlagstein ist ein geführter Arbeitsbereich für Krypto-Marktbeobachtung, Portfolio-Skizzen und die Vorbereitung einer persönlichen Beratung in der Schweiz. Sie sehen Marktdruck, Werkzeuge und ein Planungsbeispiel an einem Ort und entscheiden in Ruhe, ob Sie Kontakt aufnehmen möchten.</p>
+    </details>
+    <details class="seo-faq__item reveal-item">
+      <summary>Ist Anlagstein für Einsteiger im Krypto-Markt geeignet?</summary>
+      <p>Ja. Anlagstein strukturiert Marktinformationen, Begriffe und Werkzeuge so, dass auch neue Nutzer einen klaren Überblick gewinnen, bevor sie eine Anfrage abschicken. Sie können sich Schritt für Schritt einlesen, bevor ein Spezialist Ihre Fragen aufnimmt.</p>
+    </details>
+    <details class="seo-faq__item reveal-item">
+      <summary>Welche Daten und Werkzeuge stellt Anlagstein bereit?</summary>
+      <p>Die Plattform bietet eine Krypto-Druckkarte, eine Werkzeugkonsole für Terminal-, Portfolio- und KI-Notiz-Ansicht sowie einen Planungsrechner für Beispielszenarien rund um Kapitalbereiche, Bewegungen und Profilauswahl.</p>
+    </details>
+    <details class="seo-faq__item reveal-item">
+      <summary>Verspricht Anlagstein Renditen oder garantierte Ergebnisse?</summary>
+      <p>Nein. Anlagstein liefert Marktkontext, Bildungsmaterial und einen geordneten Ablauf, jedoch keine Renditegarantie. Krypto-Investitionen sind volatil und können erheblich an Wert verlieren – jede Entscheidung bleibt eigenverantwortlich.</p>
+    </details>
+    <details class="seo-faq__item reveal-item">
+      <summary>Wie melde ich mich bei Anlagstein an und wer kontaktiert mich?</summary>
+      <p>Sie füllen das Anfrageformular mit Name, E-Mail und Telefonnummer aus. Ein Spezialist meldet sich anschließend zu üblichen Geschäftszeiten, um Kapitalbereich, Tools und die nächsten Schritte gemeinsam mit Ihnen durchzugehen.</p>
+    </details>
+    <details class="seo-faq__item reveal-item">
+      <summary>Welche Risiken sind mit dem Krypto-Markt verbunden?</summary>
+      <p>Kryptowährungen sind hoch volatil und können erheblich an Wert verlieren. Setzen Sie ausschließlich Kapital ein, dessen vollständiger Verlust für Sie verkraftbar wäre, und prüfen Sie die jeweils geltende Rechtslage in der Schweiz vor jeder Aktion.</p>
+    </details>
+    <details class="seo-faq__item reveal-item">
+      <summary>Kostet die Nutzung von Anlagstein etwas?</summary>
+      <p>Die Marktübersicht, die Werkzeuge und das Anfrageformular sind kostenfrei zugänglich. Sollten in einer späteren Phase Spesen oder Gebühren entstehen, werden diese im persönlichen Beratungsgespräch transparent dargestellt.</p>
+    </details>
+    <details class="seo-faq__item reveal-item">
+      <summary>Wie schützt Anlagstein meine personenbezogenen Daten?</summary>
+      <p>Alle Eingaben werden gemäß unserer <a href="/privacy-policy/">Datenschutzrichtlinie</a> verarbeitet, ausschließlich für die angefragte Beratung verwendet und nicht an unbeteiligte Dritte weitergegeben. Mehr Details finden Sie auf der Datenschutzseite.</p>
+    </details>
+  </div>
+</section>
+
+<section class="briefing" id="briefing">
+  <div class="wrap briefing-grid">
+    <div class="briefing-copy reveal-item">
+      <span class="eyebrow">Klarer Ablauf</span>
+      <h2>Anlagstein trading – von der Sichtung zur Konsultation</h2>
+      <p style="max-width:520px;margin:20px 0 0;color:var(--muted);font-size:18px;">Vier nachvollziehbare Stationen führen Sie vom ersten Eindruck bis zum Beratungsgespräch. Jede Etappe ist eigenständig nutzbar und bleibt für sich allein lesbar, auch wenn Sie nur einen Teilbereich vertiefen möchten.</p>
+      <p style="max-width:520px;margin:18px 0 0;color:var(--muted);font-size:17px;">Wer mit klarer Vorstellung in eine Beratung geht, spart Zeit und vermeidet Missverständnisse. Die Stationen sind so geschnitten, dass Sie schon nach wenigen Minuten benennen können, was Sie genau wissen wollen – sei es zu Marktphasen, zu Werkzeugen oder zu einem realistischen Kapitalrahmen.</p>
+    </div>
+    <div class="layer-grid">
+      <article class="reveal-item"><span>01</span><b>Krypto-Druck</b><p>Die Feldkarte stellt Momentum, Liquidität, Volatilität und Timing für ausgewählte Krypto-Segmente in einem ruhigen Layout dar – damit Sie Marktphasen schneller erkennen.</p></article>
+      <article class="reveal-item"><span>02</span><b>Werkzeugkontext</b><p>Die Werkzeugkonsole bietet Terminal-, Portfolio- und KI-Notiz-Ansicht. So bauen Sie vor dem Anfrageformular ein eigenes Lagebild auf, statt einem fremden Skript zu folgen.</p></article>
+      <article class="reveal-item"><span>03</span><b>Kontoplanung</b><p>Der Planungsrechner verwandelt Marktinteresse in einen Beispiel-Kapitalbereich – ohne Versprechen und ohne Druck zu einer schnellen Entscheidung.</p></article>
+      <article class="reveal-item"><span>04</span><b>Spezialisten-Kontakt</b><p>Nach Absenden des Formulars greift ein Spezialist Ihre Eingaben auf und führt das nächste Gespräch entlang Ihrer Notizen und Fragen.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="allocator" id="allocator">
+  <div class="wrap allocator-grid">
+    <div class="allocator-card reveal-item">
+      <div class="allocation-output">
+        <span>Beispiel für Kontorange</span>
+        <strong id="scenarioOut">CHF 1'090</strong>
+        <small id="scenarioNote">Ausgeglichenes Feld / 9%</small>
+      </div>
+      <div class="allocation-controls">
+        <label><span>Kapitalbereich <output id="depositOut">CHF 1'000</output></span><input id="depositRange" type="range" min="250" max="15000" step="250" value="1000"></label>
+        <label><span>Marktbewegung <output id="targetOut">9%</output></span><input id="targetRange" type="range" min="3" max="35" step="1" value="9"></label>
+        <label><span>Planungsprofil</span><select id="profileSelect"><option value="0.65">Gemessen</option><option value="1" selected>Ausgeglichenes Feld</option><option value="1.5">Hoher Druck</option></select></label>
+      </div>
+    </div>
+    <div class="allocator-copy reveal-item">
+      <span class="eyebrow">Planungsrechner</span>
+      <h2>Anlagstein investitionen mit dem Planungsrechner skizzieren</h2>
+      <p>Der Rechner verfolgt ausschließlich einen bildenden Zweck: Er zeigt ein illustratives Szenario in CHF und hilft Ihnen, Erwartungen vor dem Konsultationsgespräch realistisch einzuordnen. Das Ergebnis ist keine Empfehlung und keine Prognose – es ist eine bewusst neutrale Skizze.</p>
+      <p>Spielen Sie verschiedene Kapitalbereiche, Marktbewegungen und Planungsprofile durch, um ein Gefühl dafür zu bekommen, wie sich kleine Annahmenänderungen auswirken. Genau dieses „durchspielen" ist der eigentliche Zweck: Wer die Hebel verstanden hat, formuliert in der Beratung präzisere Fragen und kann eine spätere Entscheidung besser einordnen.</p>
+    </div>
+  </div>
+</section>
+
+<section class="proof-wall">
+  <div class="wrap proof-layout">
+    <article class="proof-lead reveal-item">
+      <span class="eyebrow">Warum dieser Ablauf trägt</span>
+      <h2>Warum Anlagstein switzerland diesen Ablauf nutzt</h2>
+      <p style="margin:18px 0 0;color:var(--muted);font-size:18px;">Vorbereitung statt Affekt: Wer den Markt ruhig betrachtet und sein eigenes Profil kennt, führt das Beratungsgespräch wirkungsvoller und trifft tragfähigere Entscheidungen.</p>
+    </article>
+    <article class="reveal-item"><b>Visueller Marktkontext</b><p>Die Seite startet mit Druckkarte und Werkzeugkonsole, bevor das Formular erreicht wird – Sie wissen, worüber Sie sprechen, bevor Sie Kontakt aufnehmen.</p></article>
+    <article class="reveal-item"><b>Praktische Skizzen</b><p>Marktsegmente, Tool-Sichten und Beispiel-Kapitalbereiche lassen sich nebeneinander prüfen, bevor Sie einen Termin anfragen.</p></article>
+    <article class="reveal-item"><b>Schneller Anfrageweg</b><p>Das Anfrageformular bleibt schlicht, schnell ausfüllbar und reiht sich nahtlos in den bestehenden Beratungsprozess ein.</p></article>
+  </div>
+</section>
+
+<section class="local-edge" id="local">
+  <div class="wrap local-edge-grid">
+    <div class="reveal-item">
+      <span class="eyebrow">Schweizer Schwerpunkt</span>
+      <h2>Anlagstein CH – lokale Sicht für Schweizer Anleger</h2>
+      <p class="lede">Inhalte, Beispiele und Beratung sind auf den Schweizer Markt zugeschnitten: CHF-Beträge im Planungsrechner, Hinweise zur regulatorischen Lage rund um FINMA, Sprachgebrauch in Schweizerhochdeutsch sowie Werktagsfenster für Rückrufe in MEZ.</p>
+      <p class="lede">Wir wissen, dass Schweizer Anlegerinnen und Anleger nüchterne, faktentreue Kommunikation erwarten. Unsere Inhalte verzichten bewusst auf Übertreibungen, Renditeversprechen und „Geheimtipps". Stattdessen finden Sie eine klare Begriffsordnung, gut sortierte Werkzeuge und ein Beratungsangebot, das sich an Ihrer realen Situation orientiert – nicht an einer Verkaufsdramaturgie.</p>
+    </div>
+    <ul class="reveal-item">
+      <li><b>Beträge in CHF</b><p>Der Planungsrechner zeigt Beispiele standardmäßig in Schweizer Franken – ohne unklare Umrechnungen oder fremde Währungen im Hintergrund.</p></li>
+      <li><b>Regulatorischer Rahmen</b><p>Wir verweisen ausdrücklich auf die geltenden Schweizer Vorschriften zu Krypto-Werten und auf die Bedeutung der FINMA als Aufsichtsbehörde im Finanzmarkt.</p></li>
+      <li><b>Sprache &amp; Stil</b><p>Texte werden auf Schweizerhochdeutsch geprüft – sachlich, ruhig und ohne marktschreierische Begriffe, wie sie in der Region als unseriös gelten.</p></li>
+      <li><b>Erreichbarkeit MEZ</b><p>Beratungsgespräche werden in mitteleuropäischer Zeit terminiert. Wer am Vormittag anfragt, erhält in der Regel noch am selben Werktag eine Rückmeldung.</p></li>
+      <li><b>Bildung statt Druck</b><p>Wir setzen auf Wissen, das Sie auch ohne unsere Plattform mitnehmen können – verständliche Begriffe, sichtbare Zusammenhänge, ehrliche Risikohinweise.</p></li>
+      <li><b>Datensparsame Anfrage</b><p>Das Formular fragt nur die Felder ab, die für einen seriösen Rückruf nötig sind. Ihre Eingaben bleiben innerhalb der Beratungslinie und werden nicht an unbeteiligte Dritte weitergereicht.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="risk-strip" aria-label="Risikohinweis">
+  <div class="wrap">
+    <p><strong>Risikohinweis:</strong> Investitionen in Kryptowährungen sind mit erheblichen Wertschwankungen verbunden und können zum Totalverlust des eingesetzten Kapitals führen. Anlagstein stellt Marktinformationen, Werkzeuge und Bildungsmaterial bereit, jedoch keine individuelle Anlageempfehlung. Prüfen Sie Ihre persönliche Situation, die Schweizer Rechtslage und Ihre Risikotragfähigkeit, bevor Sie eine Entscheidung treffen. Angebote richten sich an volljährige Nutzer (18+).</p>
+    <p style="margin-top:14px;">Vergangene Kursverläufe oder dargestellte Beispielszenarien lassen keinen verlässlichen Schluss auf zukünftige Entwicklungen zu. Investieren Sie ausschließlich Beträge, deren vollständiger Verlust für Sie verkraftbar wäre, und ziehen Sie bei Bedarf eine unabhängige steuerliche oder rechtliche Beratung hinzu. Wer Anzeichen für ein problematisches Verhältnis zum Risiko bei sich erkennt, sollte eine Pause einlegen und auf Beratungsangebote zurückgreifen.</p>
+  </div>
+</section>
 
 </main>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer__inner">
-      <div class="footer__name">
-        <div class="footer__name-top">
-          <a class="logo footer__logo-main" href="/" aria-label="Plata Invest home">
-            <img src="/images/logo.png" alt="Plata Invest logo">
-          </a>
-          <a href="/" class="footer__subtitle font-questrial">Your trusted Canadian partner</a>
-        </div>
-
-        <nav>
-          <ul class="footer__menu footer__menu--mob">
-            <li class="footer__menu-item"><a href="/about/" class="footer__menu-link">About Us</a></li>
-            <li class="footer__menu-item"><a href="/contact/" class="footer__menu-link">Contacts</a></li>
-            <li class="footer__menu-item"><a href="/privacy/" class="footer__menu-link">Privacy Policy</a></li>
-            <li class="footer__menu-item"><a href="/terms/" class="footer__menu-link">Conditions of Use</a></li>
-          </ul>
-        </nav>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__top">
+      <div>
+        <a class="brand" href="/" style="margin-bottom:14px;">
+          <span class="brand__mark" aria-hidden="true">A</span>
+          <span class="brand__name">Anlagstein</span>
+        </a>
+        <p style="margin:14px 0 0;max-width:340px;">Schweizer Workspace für strukturierte Krypto-Marktbeobachtung und Beratungsvorbereitung. Kontakt: <a href="mailto:info@anlagstein-swiss.com" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px;">info@anlagstein-swiss.com</a>.</p>
       </div>
-
-      <nav class="footer__menu-inner">
-        <ul class="footer__menu footer__menu--desc">
-          <li class="footer__menu-item"><a href="/about/" class="footer__menu-link">About Us</a></li>
-          <li class="footer__menu-item"><a href="/contact/" class="footer__menu-link">Contacts</a></li>
-          <li class="footer__menu-item"><a href="/privacy/" class="footer__menu-link">Privacy Policy</a></li>
-          <li class="footer__menu-item"><a href="/terms/" class="footer__menu-link">Conditions of Use</a></li>
+      <div>
+        <h4>Plattform</h4>
+        <ul>
+          <li><a href="/#market-field">Marktdruck</a></li>
+          <li><a href="/#tools">Werkzeuge</a></li>
+          <li><a href="/#allocator">Planungsrechner</a></li>
+          <li><a href="/#faq">FAQ</a></li>
         </ul>
-      </nav>
+      </div>
+      <div>
+        <h4>Konto</h4>
+        <ul>
+          <li><a href="/sign-up/">Konto eröffnen</a></li>
+          <li><a href="/contact/">Kontakt</a></li>
+          <li><a href="/author/">Autor</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="/terms-of-use/">Nutzungsbedingungen</a></li>
+          <li><a href="/privacy-policy/">Datenschutzrichtlinie</a></li>
+        </ul>
+      </div>
     </div>
-
-    <p class="footer__disclaimer">
-      HIGH RISK WARNING: Trading FX, CFDs and crypto-assets is highly speculative, carries significant risk and is not suitable for every investor. You may lose part or all of your invested capital — only commit funds you can comfortably set aside. Plata Invest operates as a service company and does not earn revenue from the profit or loss of users. Plata Invest is not a financial services firm, is not authorised to provide investment advice and will not be liable for losses connected with the use of this informational site. RISK DISCLOSURE: Plata Invest accepts no responsibility for any damage caused by reliance on information published here, including educational material, quotes, charts and analysis. Understand the risks of trading in financial markets, take qualified professional advice when needed, and never invest money you cannot afford to lose. Risks linked to FX, CFDs and crypto may not be suitable for every investor. Plata Invest carries no responsibility for trading losses based on data taken from this site. LEGAL RESTRICTIONS: You are responsible for complying with the laws of your province and country regarding the use of this site. The ability to reach this site does not imply that any of the services or activities are legal where you live. We may receive marketing fees when users open accounts with advertised partners. Cookies are used on this site to improve the browsing experience and can be cleared from your device at any time. Names appearing on this website, including Plata Invest, are used for marketing and illustration purposes and any photographs or videos featured may use professional models or stock material rather than real users. Treat all content as informational; nothing on this page should be read as binding investment advice. Contact: info@plata-invest-ca.com.
-    </p>
-
-    <p class="text-xs">© 2026 Plata Invest. All rights reserved.</p>
+    <div class="site-footer__bottom">
+      <span>© 2026 Anlagstein. Alle Rechte vorbehalten.</span>
+      <span>Risikohinweis: Krypto-Investitionen können zum Totalverlust führen. 18+.</span>
+    </div>
   </div>
 </footer>
-
-<button id="scrollToTop" class="scroll-to-top" aria-label="Back to top">
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 19V5M5 12l7-7 7 7"></path>
-  </svg>
-</button>
-
-<div id="cookiePopup" class="cookie-popup">
-  <div class="cookie-popup__content">
-    <p class="font-questrial">We use cookies to give you the best experience on this site. <a href="/privacy/" style="text-decoration: underline; color: #d9e5e8;">Learn more</a></p>
-    <button id="acceptCookies" class="btn btn_w">Accept</button>
-  </div>
-</div>
-
-<script src="/js/jquery-3.5.1.min.js"></script>
-<script src="/js/menu.js"></script>
-<script src="/js/app.js"></script>
-<script src="/js/intlTelInput.min.js"></script>
-<script src="/js/utils.min.js"></script>
-<script src="/js/toastr.min.js"></script>
-
-<script>
-window.addEventListener("load", function () {
-  if (window.intlTelInputGlobals) window.intlTelInputGlobals.windowLoaded = true;
-});
-
-function runIntlTelInputAndGeoIp(element) {
-  return intlTelInput(element, {
-    customPlaceholder: function (selectedCountryPlaceholder) {
-      return selectedCountryPlaceholder
-        .replace(/ /g, '')
-        .replace(/-/g, '')
-        .replace(/\(/g, '')
-        .replace(/\)/g, '');
-    },
-    autoHideDialCode: false,
-    nationalMode: false,
-    separateDialCode: true,
-    autoPlaceholder: 'aggressive',
-    placeholderNumberType: "MOBILE",
-    initialCountry: "ca",
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.min.js",
-    geoIpLookup: function (success) {
-      $.get("https://ipinfo.io", function () {}, "jsonp").always(function (resp) {
-        var countryCode = (resp && resp.country) ? resp.country : "ca";
-        success(countryCode);
-      });
-    }
-  });
-}
-
-var validateEmail = function (email) {
-  var re = /\S+@\S+\.\S+/;
-  return re.test(email);
-};
-var isName = function (name) {
-  var re = /^[a-zA-Z\xC0-￿]+([ \-']{0,1}[a-zA-Z\xC0-￿]+){0,2}[. ]{0,1}$/;
-  return re.test(name);
-};
-
-$('form').each(function () {
-  let phoneInt = null;
-  if ($(this).find("input[name='phone']")[0]) {
-    phoneInt = runIntlTelInputAndGeoIp($(this).find("input[name='phone']")[0]);
-  }
-  let loading = false;
-  $(this).submit(function (e) {
-    e.preventDefault();
-    $(this).find('div.error').removeClass('error');
-    let OK = true;
-    let emailVal = $(this).find("input[name=email]").val();
-    if (emailVal && !validateEmail(emailVal)) OK = false;
-    let firstnameVal = $(this).find("input[name=firstname]").val();
-    if (!isName(firstnameVal)) OK = false;
-    let lastnameVal = $(this).find("input[name=lastname]").val();
-    if (!isName(lastnameVal)) OK = false;
-    var errorMap = ["Invalid number", "Invalid country code", "Too short phone number", "Too long phone number", "Invalid phone number"];
-    let phoneVal = null;
-    if ($(this).find("input[name='phone']")[0] && phoneInt) {
-      phoneVal = phoneInt.getNumber(intlTelInputUtils.numberFormat.E164);
-      if (!phoneInt.isValidNumber()) {
-        if (typeof toastr !== 'undefined') toastr.error(errorMap[phoneInt.getValidationError()]);
-        OK = false;
-      }
-    }
-
-    if (OK && !loading) {
-      loading = true;
-      if (typeof toastr !== 'undefined') toastr.success('Thank you — your details were sent. Our Canadian team will be in touch shortly.', 'Submitted');
-      setTimeout(function () { loading = false; }, 1500);
-    }
-  });
-});
-</script>
 
   <script src="/js/trackbox.js"></script>
 </body>

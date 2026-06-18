@@ -1,6 +1,6 @@
 <?php
 /**
- * config.php — Trackbox credentials & affiliate parameters for plata-invest-ca.com.
+ * config.php — Trackbox credentials & affiliate parameters for anlagstein-swiss.com.
  * The three header credentials are mandatory and come from your Trackbox
  * partner. ai/ci/gi are the affiliate/campaign/geo ids.
  */
@@ -16,11 +16,11 @@ return [
     'ai'       => '2958428',
     'ci'       => '1',
     'gi'       => '403',          // geo id (single geo for all sites)
-    'lg'       => 'EN',
-    'default_dial' => '1',       // lead language
+    'lg'       => 'DE',
+    'default_dial' => '41',       // lead language
 
     // ---- Source site (sent to Trackbox in "so", visible in reports) ----
-    'site_domain' => 'plata-invest-ca.com',
+    'site_domain' => 'anlagstein-swiss.com',
 
     // ---- Behaviour ----
     'generate_password' => true, // sign-up forms have no password field

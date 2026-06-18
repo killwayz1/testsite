@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://anlagstein-swiss.com/sitemap.xml
+Sitemap: https://nalvurikenz-nederland.com/sitemap.xml

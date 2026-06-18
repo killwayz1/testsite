@@ -1,0 +1,180 @@
+:root{
+  --c-primary:#3a3f73;
+  --c-primary-dark:#20223f;
+  --c-accent:#9fb4d6;
+  --c-bg:#f4f5f9;
+  --c-soft:#e6eaf3;
+  --c-text:#1f2237;
+  --c-text-mute:#4b4f6b;
+  --c-line:rgba(58,63,115,.18);
+}
+main{background-color:var(--c-bg)}
+body{color:var(--c-text)}
+h1,h2,h3,h4,h5{color:var(--c-primary-dark)}
+p{color:var(--c-text)}
+
+/* Hero calculator: ensure white text on indigo cards */
+.calc-wrap .heading,.calc-wrap .heading p,.calc-wrap .heading p.range-title,.calc-wrap .heading p.days{color:#fff}
+.calc-wrap .response p{color:#fff}
+.calc-wrap .response #prof{color:#fff}
+.sum{background-color:#fff;border:1px solid rgba(58,63,115,.35)}
+.sum *{color:var(--c-primary-dark)}
+.sum .currency{color:var(--c-primary)}
+
+/* Buttons: indigo with white text; hover = soft lift */
+.orange-btn{background-color:var(--c-primary);border:1px solid var(--c-primary);color:#fff}
+.orange-btn:hover{background-color:var(--c-primary-dark);color:#fff;border-color:var(--c-primary-dark)}
+
+/* Hero secondary outline button (desktop) */
+section.hero .content-wrap .half .hero-btn{color:var(--c-primary);border:1px solid var(--c-primary);background-color:#fff}
+section.hero .content-wrap .half .hero-btn:hover{background-color:var(--c-primary);color:#fff}
+
+/* Dark sections (`.bg`, `.list.bg`, `.benefits.bg`, `.bg-elem:before`): white text already; just confirm */
+.list.bg *{color:#fff}
+.benefits.bg h3,.benefits.bg .content h4,.benefits.bg .content p{color:#fff}
+.cta *{color:#fff}
+.cta .left p{color:#e8eaf1}
+
+/* Section card backgrounds: soft pale-indigo */
+.orange-bg{background-color:var(--c-soft)}
+.card-img .text{background-color:#fff;color:var(--c-text)}
+.card-img{box-shadow:0 6px 22px 0 rgba(58,63,115,.10);background-color:#fff;border:1px solid rgba(58,63,115,.06)}
+.cards-img.no-img .card-img{background-color:#fff}
+.cards-img.no-img .card-img .text{background-color:#fff}
+
+/* Partners slide bg */
+section.partners .partners-slider .p-slide{background-color:#fff;border:1px solid rgba(58,63,115,.06)}
+section.partners .partners-slider .p-slide.s-bg{background-color:#1f2237}
+
+/* Header */
+header{background-color:#fff;box-shadow:0 4px 16px 0 rgba(32,34,63,.08)}
+header .logo-text,.logo-text{color:var(--c-primary-dark)}
+header .header-wrap.desk .menu a{color:var(--c-text)}
+header .header-wrap.desk .menu a.active,header .header-wrap .lang-selector a.current,header .header-wrap.desk .menu a:hover{color:var(--c-primary)}
+header .menu a.active,header .menu a:hover{color:var(--c-primary)}
+header .header-wrap .hamburger .line{background-color:var(--c-primary-dark)}
+
+/* Sticky header has fixed position already; ensure mobile content pushes below */
+section.hero{margin-top:60px}
+@media (min-width:1023px){section.hero{margin-top:88px}}
+
+/* Mobile menu: clear background, indigo link colour on tap */
+.mobile-menu__wrap{background:#fff}
+.mobile-menu__wrap .menu a{color:var(--c-text)}
+.mobile-menu__wrap .menu a:hover{color:var(--c-primary)}
+
+/* Lang-selector arrow uses inline SVG that was recoloured already */
+
+/* Footer */
+footer{background-color:#fff;border-top:3px solid var(--c-primary)}
+footer .footer-menu a{color:var(--c-text)}
+footer .footer-menu a.active,footer .footer-menu a:hover{color:var(--c-primary)}
+footer .soc-links a{background-color:var(--c-primary)}
+footer .soc-links a:hover{background-color:var(--c-primary-dark)}
+footer .soc-links a:hover img{filter:none}
+footer .logo.two-col .logo-text{color:var(--c-primary-dark)}
+footer .copyright{color:var(--c-text-mute)}
+
+/* Forms (consent text contrast) */
+.register .leadform.bg-elem .consent-text{color:#e8eaf1}
+.register .leadform.bg-elem .consent-text a{color:#fff;text-decoration:underline}
+.register.no-bg .leadform .consent-text{color:var(--c-text-mute)}
+.register.last .leadform .consent-text.desk{color:#e8eaf1}
+.register.last .leadform .consent-text.desk a{color:#fff}
+.register .leadform input{background-color:#fff;color:var(--c-text);border:1px solid rgba(58,63,115,.25)}
+.register .leadform input::placeholder{color:#757589}
+
+/* Hero rating text colour on light bg */
+.rating p{color:var(--c-text)}
+
+/* Reviews */
+.reviews .reviews-wrap .review{background-color:#fff;border:1px solid rgba(58,63,115,.08);box-shadow:0 6px 22px 0 rgba(58,63,115,.06)}
+.reviews .reviews-wrap .review .review-text{color:var(--c-text)}
+.reviews .reviews-wrap .review h4{color:var(--c-primary-dark)}
+
+/* Opportunities decorative bg */
+.opportunities .opportunities-slider .p-slide .bg-elem:before{background-color:#cfd6e8}
+
+/* Generic dark .bg helper */
+.bg-elem:before{background-color:var(--c-primary-dark)}
+.bg{background-color:var(--c-primary-dark)}
+
+/* FAQ accordion */
+.faq-section{padding:60px 0}
+.faq-section h2,.faq-section h3{color:var(--c-primary-dark);margin-bottom:24px}
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:920px;margin:0 auto}
+.faq-item{background:#fff;border:1px solid rgba(58,63,115,.10);border-radius:14px;box-shadow:0 4px 18px rgba(58,63,115,.05)}
+.faq-q{padding:18px 22px;cursor:pointer;font-weight:700;font-size:18px;line-height:140%;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--c-primary-dark)}
+.faq-q:after{content:"+";font-size:24px;color:var(--c-primary);transition:transform .3s}
+.faq-item.open .faq-q:after{content:"–"}
+.faq-a{padding:0 22px 18px;line-height:150%;color:var(--c-text)}
+.faq-a p{margin-bottom:10px}
+.faq-a p:last-child{margin-bottom:0}
+
+/* Sub-page hero — extra top padding clears the fixed header */
+.page-hero{padding:108px 0 32px;text-align:left}
+.page-hero h1{font-size:34px;line-height:115%;color:var(--c-primary-dark);margin-bottom:12px}
+.page-hero p{color:var(--c-text-mute);font-size:18px;line-height:150%;max-width:780px}
+@media (min-width:1023px){.page-hero{padding:150px 0 40px}.page-hero h1{font-size:54px}}
+
+.content-section{padding:48px 0}
+.content-section h2{font-size:30px;margin-bottom:18px;color:var(--c-primary-dark)}
+.content-section h3{font-size:22px;margin:20px 0 12px;color:var(--c-primary-dark)}
+.content-section p,.content-section li{line-height:160%;margin-bottom:14px}
+.content-section ul{padding-left:22px;margin-bottom:18px}
+.content-section li{margin-bottom:8px}
+@media (min-width:1023px){.content-section h2{font-size:38px}.content-section h3{font-size:26px}}
+
+/* Team grid */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.team-card{background:#fff;border:1px solid rgba(58,63,115,.08);border-radius:14px;padding:22px;box-shadow:0 4px 18px rgba(58,63,115,.05)}
+.team-card h3{margin:6px 0 6px;font-size:20px;color:var(--c-primary-dark)}
+.team-card .role{color:var(--c-primary);font-weight:700;margin-bottom:10px}
+.team-card p{color:var(--c-text);font-size:15px;line-height:150%}
+
+/* Contact card */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-bottom:32px}
+.contact-card{background:#fff;border:1px solid rgba(58,63,115,.08);border-radius:14px;padding:22px;box-shadow:0 4px 18px rgba(58,63,115,.05)}
+.contact-card h3{font-size:20px;margin-bottom:8px;color:var(--c-primary-dark)}
+.contact-card a{color:var(--c-primary);text-decoration:none;word-break:break-all}
+.contact-card a:hover{text-decoration:underline}
+
+/* Sign-in compact form */
+.auth-wrap{max-width:520px;margin:32px auto 80px;background:#fff;border:1px solid rgba(58,63,115,.10);border-radius:18px;padding:36px;box-shadow:0 12px 38px rgba(58,63,115,.08)}
+.auth-wrap h1{font-size:30px;margin-bottom:8px;color:var(--c-primary-dark)}
+.auth-wrap p.lead{color:var(--c-text-mute);margin-bottom:24px}
+.auth-wrap input{width:100%;padding:14px 16px;border-radius:10px;border:1px solid rgba(58,63,115,.25);margin-bottom:14px;font-size:16px;color:var(--c-text);background:#fff}
+.auth-wrap label{display:block;font-weight:700;margin-bottom:6px;color:var(--c-primary-dark)}
+.auth-wrap .auth-foot{margin-top:18px;font-size:14px;color:var(--c-text-mute)}
+.auth-wrap .auth-foot a{color:var(--c-primary);font-weight:700;text-decoration:none}
+.auth-wrap .iti{margin-bottom:14px}
+.auth-wrap .leadform .orange-btn{width:100%;margin-top:4px}
+
+/* Highlights row */
+.highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:24px 0 8px}
+.highlights .h-card{background:#fff;border:1px solid rgba(58,63,115,.08);border-radius:14px;padding:22px;box-shadow:0 4px 18px rgba(58,63,115,.05)}
+.highlights .h-card strong{display:block;font-size:28px;color:var(--c-primary);margin-bottom:6px}
+.highlights .h-card span{color:var(--c-text);font-size:15px;line-height:150%}
+
+/* Disclaimer band (Responsible Trading / Risk) */
+.risk-band{background:var(--c-primary-dark);color:#fff;padding:32px 0;margin-top:32px}
+.risk-band h3{color:#fff;font-size:22px;margin-bottom:10px}
+.risk-band p{color:#e8eaf1;font-size:15px;line-height:160%;margin-bottom:0}
+
+/* Sticky header z-index in case page-hero overlaps */
+header{z-index:9999}
+
+/* intl-tel-input local-flags theming */
+.iti{width:100%}
+.iti__country-list{background:#fff;border:1px solid rgba(58,63,115,.18);color:var(--c-text)}
+.iti__country.iti__highlight{background:rgba(58,63,115,.10)}
+.iti__selected-flag{background:transparent}
+.iti__flag-local{width:24px;height:18px;display:inline-block;border-radius:2px;vertical-align:middle;background:#cbd2e3;color:#1f2237;font-size:10px;font-weight:700;text-align:center;line-height:18px;overflow:hidden}
+
+/* Visible focus ring */
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--c-primary);outline-offset:2px}
+
+/* Avoid lonely card in a 5+ row: keep cards-row balanced (mobile -> 1 col, tablet -> 2, desktop -> 3). Source already handles this for most rows. */
+@media (min-width:1023px){
+  section.cards-img.no-img.sec .content-wrap .bottom.cards-row{flex-wrap:wrap}
+}

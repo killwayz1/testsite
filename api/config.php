@@ -1,6 +1,6 @@
 <?php
 /**
- * config.php — Trackbox credentials & affiliate parameters for nalvurikenz-nederland.com.
+ * config.php — Trackbox credentials & affiliate parameters for ridgefundastead-au.com.
  * The three header credentials are mandatory and come from your Trackbox
  * partner. ai/ci/gi are the affiliate/campaign/geo ids.
  */
@@ -16,11 +16,11 @@ return [
     'ai'       => '2958428',
     'ci'       => '1',
     'gi'       => '403',          // geo id (single geo for all sites)
-    'lg'       => 'NL',
-    'default_dial' => '31',       // lead language
+    'lg'       => 'EN',
+    'default_dial' => '61',       // lead language
 
     // ---- Source site (sent to Trackbox in "so", visible in reports) ----
-    'site_domain' => 'nalvurikenz-nederland.com',
+    'site_domain' => 'ridgefundastead-au.com',
 
     // ---- Behaviour ----
     'generate_password' => true, // sign-up forms have no password field

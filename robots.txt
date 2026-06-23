@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nalvurikenz-nederland.com/sitemap.xml
+Sitemap: https://ridgefundastead-au.com/sitemap.xml

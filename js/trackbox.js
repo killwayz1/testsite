@@ -90,7 +90,7 @@
 
   // ISO-2 country -> calling code (covers the geos these landings target).
   var ISO2DIAL = {
-    CH:'41', AT:'43', LI:'423', NL:'31', BE:'32',
+    AU:'61', NZ:'64', CH:'41', AT:'43', LI:'423', NL:'31', BE:'32',
     CA:'1', US:'1', AR:'54', MX:'52', BR:'55', CL:'56', UY:'598', PY:'595',
     BO:'591', PE:'51', CO:'57', EC:'593', VE:'58', ES:'34', GB:'44', UK:'44',
     DE:'49', FR:'33', IT:'39', PT:'351'
@@ -262,9 +262,10 @@
     var names = findNames(list, email, phone, pass);
     var hasName = names.first || names.full;
     if (pass && !hasName) return { kind: 'login', email: email, pass: pass };
+    // A Trackbox lead REQUIRES a phone. Forms with email+name but no phone
+    // (contact / report / newsletter) are left to the site's own handler.
     // A real registration lead has email + phone + a NAME field. Forms missing
-    // any of these (contact / report-abuse / newsletter) are left to the site's
-    // own handler so we never hijack and break them.
+    // any of these (contact / report-abuse / newsletter) are left to the site.
     if (email && phone && hasName) return { kind: 'lead', email: email, phone: phone, names: names };
     return { kind: 'skip' };
   }

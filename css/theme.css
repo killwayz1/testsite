@@ -1,180 +1,310 @@
-:root{
-  --c-primary:#3a3f73;
-  --c-primary-dark:#20223f;
-  --c-accent:#9fb4d6;
-  --c-bg:#f4f5f9;
-  --c-soft:#e6eaf3;
-  --c-text:#1f2237;
-  --c-text-mute:#4b4f6b;
-  --c-line:rgba(58,63,115,.18);
+/* Ridge Fundastead AU — palette override (Deep Teal + Coral)
+   Selector matches the source data-theme="orange" so all precompiled
+   utility classes (text-primary, bg-primary, border-primary, etc.) recolor at once. */
+
+[data-theme="orange"] {
+  --color-primary-lightest: #f1f6f5;
+  --color-primary-lighter:  #d6e5e3;
+  --color-primary-light:    #6e9b97;
+  --color-primary:          #1f5a57;
+  --color-primary-dark:     #0f302e;
+
+  --color-secondary-lightest: #fdf4f0;
+  --color-secondary-lighter:  #f5d4c5;
+  --color-secondary-light:    #ecb39c;
+  --color-secondary:          #e08a6e;
+  --color-secondary-dark:     #c97456;
 }
-main{background-color:var(--c-bg)}
-body{color:var(--c-text)}
-h1,h2,h3,h4,h5{color:var(--c-primary-dark)}
-p{color:var(--c-text)}
 
-/* Hero calculator: ensure white text on indigo cards */
-.calc-wrap .heading,.calc-wrap .heading p,.calc-wrap .heading p.range-title,.calc-wrap .heading p.days{color:#fff}
-.calc-wrap .response p{color:#fff}
-.calc-wrap .response #prof{color:#fff}
-.sum{background-color:#fff;border:1px solid rgba(58,63,115,.35)}
-.sum *{color:var(--c-primary-dark)}
-.sum .currency{color:var(--c-primary)}
+/* ====== Sticky mobile header (always visible) ====== */
+@media (max-width: 1023px) {
+  body > header {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background-color: #ffffff;
+    padding-top: 0 !important;
+    padding-bottom: 0;
+    border-bottom: 1px solid #e7eceb;
+  }
+  body > header .rounded-custom {
+    border: 0 !important;
+    border-radius: 0 !important;
+    min-height: 64px;
+  }
+}
 
-/* Buttons: indigo with white text; hover = soft lift */
-.orange-btn{background-color:var(--c-primary);border:1px solid var(--c-primary);color:#fff}
-.orange-btn:hover{background-color:var(--c-primary-dark);color:#fff;border-color:var(--c-primary-dark)}
+/* ====== Mobile burger menu (drawer) ====== */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0; right: 0;
+  bottom: 0;
+  z-index: 55;
+  background: #ffffff;
+  padding: 32px 24px 48px;
+  overflow-y: auto;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 28px;
+  /* Neutralize the centered-popup transform/scale/size that the precompiled
+     Tailwind `.mobile-menu` component class still applies — otherwise the
+     drawer gets translated off-screen (-50% -50%) and only half covers it. */
+  translate: none;
+  scale: none;
+  transform: none;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  min-width: 0;
+  min-height: 0;
+  border-radius: 0;
+  opacity: 1;
+}
+.mobile-menu[data-active] { display: flex; }
+.mobile-menu ul li a {
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #0f302e;
+}
+.menu-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; height: 44px;
+  color: #0f302e;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .menu-icon { display: none; }
+  .mobile-menu { display: none !important; }
+}
 
-/* Hero secondary outline button (desktop) */
-section.hero .content-wrap .half .hero-btn{color:var(--c-primary);border:1px solid var(--c-primary);background-color:#fff}
-section.hero .content-wrap .half .hero-btn:hover{background-color:var(--c-primary);color:#fff}
+/* ====== Intl phone selector (built-from-scratch, emoji flags) ====== */
+.tel-field {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #cfd9d8;
+  border-radius: 12px;
+  background: #ffffff;
+  overflow: visible;
+  position: relative;
+}
+.tel-field__dial {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-right: 1px solid #cfd9d8;
+  cursor: pointer;
+  background: #fafdfc;
+  font-size: 0.95rem;
+  color: #0f302e;
+  font-weight: 500;
+  border-radius: 12px 0 0 12px;
+  user-select: none;
+  white-space: nowrap;
+}
+.tel-field__flag {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.tel-field__caret {
+  width: 12px; height: 12px;
+  display: inline-block;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M2 4l4 4 4-4' stroke='%230f302e' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 2px;
+}
+.tel-field__input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  padding: 10px 14px;
+  font: inherit;
+  background: transparent;
+  color: #0f302e;
+  border-radius: 0 12px 12px 0;
+}
+.tel-field__list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  max-height: 260px;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid #cfd9d8;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15,48,46,0.12);
+  padding: 6px 0;
+  margin: 0;
+  list-style: none;
+  z-index: 200;
+}
+.tel-field__list[hidden] { display: none; }
+.tel-field__list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: #0f302e;
+}
+.tel-field__list li:hover { background: #f1f6f5; }
+.tel-field__list li .dial { margin-left: auto; color: #4d6864; }
 
-/* Dark sections (`.bg`, `.list.bg`, `.benefits.bg`, `.bg-elem:before`): white text already; just confirm */
-.list.bg *{color:#fff}
-.benefits.bg h3,.benefits.bg .content h4,.benefits.bg .content p{color:#fff}
-.cta *{color:#fff}
-.cta .left p{color:#e8eaf1}
+/* form spacing tweaks for inner tel widget */
+form label .tel-field { margin-top: 2px; }
 
-/* Section card backgrounds: soft pale-indigo */
-.orange-bg{background-color:var(--c-soft)}
-.card-img .text{background-color:#fff;color:var(--c-text)}
-.card-img{box-shadow:0 6px 22px 0 rgba(58,63,115,.10);background-color:#fff;border:1px solid rgba(58,63,115,.06)}
-.cards-img.no-img .card-img{background-color:#fff}
-.cards-img.no-img .card-img .text{background-color:#fff}
+/* ====== Hero/dark sections contrast safety ====== */
+section.bg-primary,
+.bg-primary {
+  color: #ffffff;
+}
+.text-on-primary { color: #ffffff !important; }
 
-/* Partners slide bg */
-section.partners .partners-slider .p-slide{background-color:#fff;border:1px solid rgba(58,63,115,.06)}
-section.partners .partners-slider .p-slide.s-bg{background-color:#1f2237}
+/* Stats and accent block tweaks */
+.accent-pill {
+  display: inline-block;
+  background: var(--color-secondary);
+  color: #0f302e;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
 
-/* Header */
-header{background-color:#fff;box-shadow:0 4px 16px 0 rgba(32,34,63,.08)}
-header .logo-text,.logo-text{color:var(--c-primary-dark)}
-header .header-wrap.desk .menu a{color:var(--c-text)}
-header .header-wrap.desk .menu a.active,header .header-wrap .lang-selector a.current,header .header-wrap.desk .menu a:hover{color:var(--c-primary)}
-header .menu a.active,header .menu a:hover{color:var(--c-primary)}
-header .header-wrap .hamburger .line{background-color:var(--c-primary-dark)}
+/* Trading widget container fallback */
+.tradingview-grid {
+  display: grid;
+  gap: 12px;
+}
+.tradingview-grid .tv-card {
+  border: 1px solid var(--color-primary-lighter);
+  border-radius: 16px;
+  padding: 14px;
+  min-height: 92px;
+  background: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+}
 
-/* Sticky header has fixed position already; ensure mobile content pushes below */
-section.hero{margin-top:60px}
-@media (min-width:1023px){section.hero{margin-top:88px}}
+/* Risk disclaimer block */
+.risk-disclosure {
+  border: 1px solid var(--color-primary-lighter);
+  background: var(--color-primary-lightest);
+  border-radius: 16px;
+  padding: 18px 22px;
+  color: #1c2725;
+}
 
-/* Mobile menu: clear background, indigo link colour on tap */
-.mobile-menu__wrap{background:#fff}
-.mobile-menu__wrap .menu a{color:var(--c-text)}
-.mobile-menu__wrap .menu a:hover{color:var(--c-primary)}
+/* Button base / contrast fix: ensure btn-white has dark text */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+.btn-white { color: #0f302e !important; }
+.btn-white:hover { color: #0f302e !important; }
+.btn-black { color: #ffffff !important; }
+.btn-black:hover { background: var(--color-primary) !important; color: #ffffff !important; }
 
-/* Lang-selector arrow uses inline SVG that was recoloured already */
+/* Coral CTA variant */
+.btn-coral {
+  background: var(--color-secondary);
+  color: #0f302e;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 14px 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color .2s ease, transform .2s ease;
+}
+.btn-coral:hover { background: var(--color-secondary-dark); }
 
-/* Footer */
-footer{background-color:#fff;border-top:3px solid var(--c-primary)}
-footer .footer-menu a{color:var(--c-text)}
-footer .footer-menu a.active,footer .footer-menu a:hover{color:var(--c-primary)}
-footer .soc-links a{background-color:var(--c-primary)}
-footer .soc-links a:hover{background-color:var(--c-primary-dark)}
-footer .soc-links a:hover img{filter:none}
-footer .logo.two-col .logo-text{color:var(--c-primary-dark)}
-footer .copyright{color:var(--c-text-mute)}
+/* Active nav link colour from data-active */
+nav a[data-active] { color: var(--color-primary) !important; font-weight: 500; }
 
-/* Forms (consent text contrast) */
-.register .leadform.bg-elem .consent-text{color:#e8eaf1}
-.register .leadform.bg-elem .consent-text a{color:#fff;text-decoration:underline}
-.register.no-bg .leadform .consent-text{color:var(--c-text-mute)}
-.register.last .leadform .consent-text.desk{color:#e8eaf1}
-.register.last .leadform .consent-text.desk a{color:#fff}
-.register .leadform input{background-color:#fff;color:var(--c-text);border:1px solid rgba(58,63,115,.25)}
-.register .leadform input::placeholder{color:#757589}
+/* Active mobile menu */
+.menu-icon[data-active] svg rect:nth-child(2) { opacity: 0; }
+.menu-icon[data-active] svg rect:nth-child(1) { transform-origin: center; transform: translateY(12px) rotate(45deg); }
+.menu-icon[data-active] svg rect:nth-child(3) { transform-origin: center; transform: translateY(-12px) rotate(-45deg); }
 
-/* Hero rating text colour on light bg */
-.rating p{color:var(--c-text)}
+/* Lang menu fallback (sometimes the data-active attribute toggles): hide by default */
+[data-connect="lang-menu"] {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 140px;
+  background: #ffffff;
+  border: 1px solid var(--color-primary-lighter);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15,48,46,0.10);
+  z-index: 100;
+}
+[data-connect="lang-menu"][data-active] { display: block; }
 
-/* Reviews */
-.reviews .reviews-wrap .review{background-color:#fff;border:1px solid rgba(58,63,115,.08);box-shadow:0 6px 22px 0 rgba(58,63,115,.06)}
-.reviews .reviews-wrap .review .review-text{color:var(--c-text)}
-.reviews .reviews-wrap .review h4{color:var(--c-primary-dark)}
+/* Trust-row layout — ensure even fills (no orphan card) */
+.trust-grid {
+  display: grid;
+  gap: 16px;
+}
+@media (min-width: 640px) {
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .trust-grid { grid-template-columns: repeat(4, 1fr); }
+}
 
-/* Opportunities decorative bg */
-.opportunities .opportunities-slider .p-slide .bg-elem:before{background-color:#cfd6e8}
+/* Make sure the picture image fills its slot smoothly */
+picture img { display: block; height: auto; max-width: 100%; }
 
-/* Generic dark .bg helper */
-.bg-elem:before{background-color:var(--c-primary-dark)}
-.bg{background-color:var(--c-primary-dark)}
+/* Footer brand color override on dark bg */
+footer { color: #cdd9d6; }
+footer a { color: #ffffff; }
+footer a:hover { color: var(--color-secondary); }
 
-/* FAQ accordion */
-.faq-section{padding:60px 0}
-.faq-section h2,.faq-section h3{color:var(--c-primary-dark);margin-bottom:24px}
-.faq-list{display:flex;flex-direction:column;gap:12px;max-width:920px;margin:0 auto}
-.faq-item{background:#fff;border:1px solid rgba(58,63,115,.10);border-radius:14px;box-shadow:0 4px 18px rgba(58,63,115,.05)}
-.faq-q{padding:18px 22px;cursor:pointer;font-weight:700;font-size:18px;line-height:140%;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--c-primary-dark)}
-.faq-q:after{content:"+";font-size:24px;color:var(--c-primary);transition:transform .3s}
-.faq-item.open .faq-q:after{content:"–"}
-.faq-a{padding:0 22px 18px;line-height:150%;color:var(--c-text)}
-.faq-a p{margin-bottom:10px}
-.faq-a p:last-child{margin-bottom:0}
+/* Make sure body text colour is contrasty even after theme override */
+body { color: #1c2725; }
+h1, h2, h3, h4, h5 { color: #0f302e; }
+.bg-primary h1, .bg-primary h2, .bg-primary h3 { color: #ffffff; }
+.bg-black { background-color: #0a1413 !important; }
 
-/* Sub-page hero — extra top padding clears the fixed header */
-.page-hero{padding:108px 0 32px;text-align:left}
-.page-hero h1{font-size:34px;line-height:115%;color:var(--c-primary-dark);margin-bottom:12px}
-.page-hero p{color:var(--c-text-mute);font-size:18px;line-height:150%;max-width:780px}
-@media (min-width:1023px){.page-hero{padding:150px 0 40px}.page-hero h1{font-size:54px}}
+/* Disable the loading-skeleton flash (we drop it via JS too) */
+html.loading body > *:not(#skeleton) { visibility: visible !important; }
 
-.content-section{padding:48px 0}
-.content-section h2{font-size:30px;margin-bottom:18px;color:var(--c-primary-dark)}
-.content-section h3{font-size:22px;margin:20px 0 12px;color:var(--c-primary-dark)}
-.content-section p,.content-section li{line-height:160%;margin-bottom:14px}
-.content-section ul{padding-left:22px;margin-bottom:18px}
-.content-section li{margin-bottom:8px}
-@media (min-width:1023px){.content-section h2{font-size:38px}.content-section h3{font-size:26px}}
+/* Inputs: brand-aware focus */
+.input:focus {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 1px;
+}
 
-/* Team grid */
-.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.team-card{background:#fff;border:1px solid rgba(58,63,115,.08);border-radius:14px;padding:22px;box-shadow:0 4px 18px rgba(58,63,115,.05)}
-.team-card h3{margin:6px 0 6px;font-size:20px;color:var(--c-primary-dark)}
-.team-card .role{color:var(--c-primary);font-weight:700;margin-bottom:10px}
-.team-card p{color:var(--c-text);font-size:15px;line-height:150%}
+/* Restore missing base .p-6 utility (absent from the purged Tailwind build).
+   Without it, cards using bare `p-6` (product/offer/faq) get no padding and
+   their text overflows the rounded border, making the outline look broken. */
+.p-6 { padding: calc(var(--spacing) * 6); }
 
-/* Contact card */
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-bottom:32px}
-.contact-card{background:#fff;border:1px solid rgba(58,63,115,.08);border-radius:14px;padding:22px;box-shadow:0 4px 18px rgba(58,63,115,.05)}
-.contact-card h3{font-size:20px;margin-bottom:8px;color:var(--c-primary-dark)}
-.contact-card a{color:var(--c-primary);text-decoration:none;word-break:break-all}
-.contact-card a:hover{text-decoration:underline}
-
-/* Sign-in compact form */
-.auth-wrap{max-width:520px;margin:32px auto 80px;background:#fff;border:1px solid rgba(58,63,115,.10);border-radius:18px;padding:36px;box-shadow:0 12px 38px rgba(58,63,115,.08)}
-.auth-wrap h1{font-size:30px;margin-bottom:8px;color:var(--c-primary-dark)}
-.auth-wrap p.lead{color:var(--c-text-mute);margin-bottom:24px}
-.auth-wrap input{width:100%;padding:14px 16px;border-radius:10px;border:1px solid rgba(58,63,115,.25);margin-bottom:14px;font-size:16px;color:var(--c-text);background:#fff}
-.auth-wrap label{display:block;font-weight:700;margin-bottom:6px;color:var(--c-primary-dark)}
-.auth-wrap .auth-foot{margin-top:18px;font-size:14px;color:var(--c-text-mute)}
-.auth-wrap .auth-foot a{color:var(--c-primary);font-weight:700;text-decoration:none}
-.auth-wrap .iti{margin-bottom:14px}
-.auth-wrap .leadform .orange-btn{width:100%;margin-top:4px}
-
-/* Highlights row */
-.highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:24px 0 8px}
-.highlights .h-card{background:#fff;border:1px solid rgba(58,63,115,.08);border-radius:14px;padding:22px;box-shadow:0 4px 18px rgba(58,63,115,.05)}
-.highlights .h-card strong{display:block;font-size:28px;color:var(--c-primary);margin-bottom:6px}
-.highlights .h-card span{color:var(--c-text);font-size:15px;line-height:150%}
-
-/* Disclaimer band (Responsible Trading / Risk) */
-.risk-band{background:var(--c-primary-dark);color:#fff;padding:32px 0;margin-top:32px}
-.risk-band h3{color:#fff;font-size:22px;margin-bottom:10px}
-.risk-band p{color:#e8eaf1;font-size:15px;line-height:160%;margin-bottom:0}
-
-/* Sticky header z-index in case page-hero overlaps */
-header{z-index:9999}
-
-/* intl-tel-input local-flags theming */
-.iti{width:100%}
-.iti__country-list{background:#fff;border:1px solid rgba(58,63,115,.18);color:var(--c-text)}
-.iti__country.iti__highlight{background:rgba(58,63,115,.10)}
-.iti__selected-flag{background:transparent}
-.iti__flag-local{width:24px;height:18px;display:inline-block;border-radius:2px;vertical-align:middle;background:#cbd2e3;color:#1f2237;font-size:10px;font-weight:700;text-align:center;line-height:18px;overflow:hidden}
-
-/* Visible focus ring */
-button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--c-primary);outline-offset:2px}
-
-/* Avoid lonely card in a 5+ row: keep cards-row balanced (mobile -> 1 col, tablet -> 2, desktop -> 3). Source already handles this for most rows. */
-@media (min-width:1023px){
-  section.cards-img.no-img.sec .content-wrap .bottom.cards-row{flex-wrap:wrap}
+/* Ensure list-disc actually renders bullets even inside grid containers */
+ul.list-disc {
+  list-style: disc outside;
+}
+ol.list-decimal {
+  list-style: decimal outside;
+}
+ul.list-disc > li,
+ol.list-decimal > li {
+  display: list-item;
 }
